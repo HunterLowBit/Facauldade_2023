@@ -8,11 +8,7 @@ class Application:
 root = Tk()
 root.geometry('300x300')
 
-class App(tk.Tk):
-    def __init__(self):
-        super().__init__()
-        python_image = tk.PhotoImage(file='DOG.jpg')
-        ttk.Label(self, image=python_image).pack()
+
 
 
 
