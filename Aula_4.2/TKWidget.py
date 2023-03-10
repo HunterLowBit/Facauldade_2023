@@ -9,7 +9,6 @@ class Application:
 root = tk.Tk()
 root.geometry("300x200")
 
-
 rotulo = tk.Label(root, text="Termos de Serviço!")
 rotulo.pack() 
 rotulo2 = tk.Label(root, text="Digite seu nome e selecione se deseja receber emails!")
@@ -25,8 +24,8 @@ menu.pack()
 rotulo3 = tk.Label(root, text="Digite seu email caso tenha marcado que sim")
 rotulo3.pack() 
 
-caixa_texto1 = tk.Entry(root,)
-caixa_texto1.pack()
+c_texto1 = tk.Entry(root,)
+c_texto1.pack()
 
 c_selecao = tk.Checkbutton(root, text="Aceito os termos e condições")
 c_selecao.pack()  
