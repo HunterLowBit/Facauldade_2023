@@ -9,3 +9,8 @@ valor_dolar = soup.find_all('span', class_="DFlfde SwHCTb")[0]
 print(valor_dolar)
 print(valor_dolar.text)
 print(valor_dolar['data-value'])
+
+page2 = requests.get('https://www.google.com/search?q=hora&oq=hora&aqs=chrome..69i57j0i433i512j0i131i433i457i512j0i402i512j0i512j0i131i433i512j0i512j0i131i433i512j0i512l2.1378j0j1&sourceid=chrome&ie=UTF-8', headers = headers)
+soup2 = BeautifulSoup(page2.content, 'html.parser')
+Hora_agora = soup2.find_all('div', class_="gsrt vk_bk FzvWSb YwPhnf")[0]
+print(Hora_agora.text)
