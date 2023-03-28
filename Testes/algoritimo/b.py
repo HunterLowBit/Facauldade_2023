@@ -19,3 +19,4 @@ print(a.VA,"<->",a.VB)
 
 a.aleatoriza()
 a.guarda()
+
