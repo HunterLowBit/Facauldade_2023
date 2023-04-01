@@ -25,16 +25,17 @@ Botao = tk.Button(root, text="Clica aqui", command=muda_botao)
 Botao.pack() 
 
 
+
 botao_sair = Button(root, text="Confirmar e Fechar", command=root.destroy)
 botao_sair.pack(pady=10)
 botao_sair.place(x = 90, y = 150)
 
-"""def muda_label():
+def muda_label(evento):
     print('Apertei 1')
-    rotulo.config(text='')
+    rotulo.config(text='ASD')
 
-root.bind('1', muda_label())
-"""    
+root.bind('1', muda_label)
+    
 
 Application(root)
 root.mainloop()
