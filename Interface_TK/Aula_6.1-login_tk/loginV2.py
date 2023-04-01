@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import messagebox
 
+
+
 c0 = "white"
 c1 = "black"
 c2 = "red"
@@ -28,32 +30,33 @@ c23 = "ice light grey"
 
 
 janela = Tk()
-janela.title("sistema de login")
-janela.geometry("400x400")
+janela.title("Sistema de login")
+janela.geometry("300x200")
 janela.config(background=c0)
 janela.resizable(width=FALSE, height=FALSE) 
 
+frame_login = Frame(janela, bg=c1, height=190, width=290, relief='flat')
+frame_login.grid(row=0, column=0, padx=5, pady=5,sticky="NSEW") 
 
 def login():
-    if (usuario.get() == "admin" and senha.get() == "admin"):
-        messagebox.showinfo("Bem vindo", "Bem vindo ao sistema")
+    if (usuario.get() == "Robson" and senha.get() == "2402"):
+        messagebox.showinfo('Sucesso', 'Seja bem vindo!') 
         janela.destroy()
     else:
         messagebox.showerror("Erro", "usuário ou senha incorretos") 
 
 
-Label(janela, text="Usuário:", background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=8, y=10)
-Label(janela, text="Senha:", background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=8, y=50)
+Label1 = Label(frame_login, width=7, text="Usuário:", background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=8, y=10)
+Label2 = Label(frame_login, width=7, text="Senha:", background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=8, y=50)
 
  
-usuario = Entry(janela, width=20, font=("Arial", 15, "bold"))
-usuario.place(x=100, y=10)   
+usuario = Entry(frame_login, width=15, font=("Arial", 15, "bold"))
+usuario.place(x=110, y=10)   
 
-senha = Entry(janela, width=20, show="*", font=("Arial", 15, "bold"))
-senha.place(x=100, y=50)
+senha = Entry(frame_login, width=15, show="*", font=("Arial", 15, "bold"))
+senha.place(x=110, y=50)
 
-Button(janela, text="Entrar", command=login, background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=100, y=90)
-
+Button(frame_login, text="Entrar", command=login, background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=110, y=90)
 
 
 
