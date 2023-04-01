@@ -10,9 +10,7 @@ c5 = "yellow"
 c6 = "orange"
 c7 = "pink"
 c8 = "purple"
-c9 = "brown"
-c10 = "grey"
-
+     
 
 janela = Tk()
 janela.title("Sistema de login")
@@ -49,7 +47,7 @@ label_linha = Label(separador,width=12, text="",anchor=NE, font=("Arial", 17, "b
 usuario = Entry(separador, width=15, font=("Arial", 15, "bold"))
 usuario.place(x=105, y=50)   
 
-senha = Entry(separador, width=15, show="*", font=("Arial", 15, "bold"))
+senha = Entry(separador, width=15, show="*", font=("Arial", 15, "bold"),fg=c8)
 senha.place(x=105, y=90)
 
 
@@ -65,3 +63,4 @@ Button(separador, text="Entrar", command=login, background=c1, foreground=c0, fo
 
 
 janela.mainloop()
+
