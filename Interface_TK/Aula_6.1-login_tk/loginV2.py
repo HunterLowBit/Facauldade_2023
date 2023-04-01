@@ -32,11 +32,16 @@ c23 = "ice light grey"
 janela = Tk()
 janela.title("Sistema de login")
 janela.geometry("300x200")
-janela.config(background=c0)
+janela.config(background=c1)
 janela.resizable(width=FALSE, height=FALSE) 
 
-frame_login = Frame(janela, bg=c1, height=190, width=290, relief='flat')
+
+frame_login = Frame(janela, bg=c0, height=190, width=290, relief='flat')
 frame_login.grid(row=0, column=0, padx=5, pady=5,sticky="NSEW") 
+
+separador = Frame(janela, bg=c6, height=30, width=2, relief='flat')
+separador.grid(row=0, column=0, padx=10, pady=10,sticky="NSEW")
+
 
 def login():
     if (usuario.get() == "Robson" and senha.get() == "2402"):
@@ -46,17 +51,18 @@ def login():
         messagebox.showerror("Erro", "usuário ou senha incorretos") 
 
 
-Label1 = Label(frame_login, width=7, text="Usuário:", background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=8, y=10)
-Label2 = Label(frame_login, width=7, text="Senha:", background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=8, y=50)
+Label1 = Label(separador, width=7, text="Usuário:", background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=8, y=50)
+Label2 = Label(separador, width=7, text="Senha:", background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=8, y=90)
 
  
-usuario = Entry(frame_login, width=15, font=("Arial", 15, "bold"))
-usuario.place(x=110, y=10)   
+ 
+usuario = Entry(separador, width=15, font=("Arial", 15, "bold"))
+usuario.place(x=105, y=50)   
 
-senha = Entry(frame_login, width=15, show="*", font=("Arial", 15, "bold"))
-senha.place(x=110, y=50)
+senha = Entry(separador, width=15, show="*", font=("Arial", 15, "bold"))
+senha.place(x=105, y=90)
 
-Button(frame_login, text="Entrar", command=login, background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=110, y=90)
+Button(separador, text="Entrar", command=login, background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=140, y=140)
 
 
 
