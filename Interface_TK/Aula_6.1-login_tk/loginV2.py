@@ -37,7 +37,7 @@ def login():
 
 
 
-label_linha = Label(separador,width=21, text="DIGITE AS CREDENCIAIS",anchor=NE, font=("Arial", 12), bg=c1 , fg=c0).place(x=12, y=12)
+label_linha = Label(separador,width=21, text="DIGITE AS CREDENCIAIS",anchor=NE, font=("Arial", 12), bg=c1 , fg=c0).place(x=44, y=12)
 
 Label1 = Label(separador, width=7, text="Usuário:", background=c6, foreground=c1, font=("Arial", 15, "bold")).place(x=8, y=50)
 Label2 = Label(separador, width=7, text="Senha:", background=c6, foreground=c1, font=("Arial", 15, "bold")).place(x=8, y=90)
