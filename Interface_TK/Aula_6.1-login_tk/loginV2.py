@@ -1,8 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
 
-
-
 c0 = "white"
 c1 = "black"
 c2 = "red"
@@ -14,19 +12,6 @@ c7 = "pink"
 c8 = "purple"
 c9 = "brown"
 c10 = "grey"
-c11 = "dark grey"
-c12 = "light grey"
-c13 = "brown"
-c14 = "ice blue"
-c15 = "ice green"
-c16 = "ice yellow"
-c17 = "ice orange"
-c18 = "ice pink"
-c19 = "ice purple"
-c20 = "ice brown"
-c21 = "ice grey"
-c22 = "ice dark grey"
-c23 = "ice light grey"
 
 
 janela = Tk()
@@ -62,8 +47,10 @@ usuario.place(x=105, y=50)
 senha = Entry(separador, width=15, show="*", font=("Arial", 15, "bold"))
 senha.place(x=105, y=90)
 
-label_linha = Label(separador,width=100, text="",anchor=NE, font=("Arial", 2, "bold"), bg=c1 , fg=c1).place(x=0, y=132)
-label_linha = Label(separador,width=100, text="",anchor=NE, font=("Arial", 2, "bold"), bg=c1 , fg=c1).place(x=0, y=164)
+label_linha = Label(separador,width=200, text="",anchor=NE, font=("Arial", 2, "bold"), bg=c1 , fg=c1).place(x=0, y=132)
+label_linha = Label(separador,width=200, text="",anchor=NE, font=("Arial", 2, "bold"), bg=c1 , fg=c1).place(x=0, y=164)
+label_linha = Label(separador,width=100, text="",anchor=NE, font=("Arial", 12, "bold"), bg=c5 , fg=c1).place(x=0, y=140)
+
 
 Button(separador, text="Entrar", command=login, background=c1, foreground=c0, font=("Arial", 15, "bold")).place(x=140, y=132)
 
