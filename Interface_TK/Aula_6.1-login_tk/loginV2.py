@@ -51,8 +51,8 @@ def login():
         messagebox.showerror("Erro", "usuário ou senha incorretos") 
 
 
-Label1 = Label(separador, width=7, text="Usuário:", background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=8, y=50)
-Label2 = Label(separador, width=7, text="Senha:", background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=8, y=90)
+Label1 = Label(separador, width=7, text="Usuário:", background=c6, foreground=c1, font=("Arial", 15, "bold")).place(x=8, y=50)
+Label2 = Label(separador, width=7, text="Senha:", background=c6, foreground=c1, font=("Arial", 15, "bold")).place(x=8, y=90)
 
  
  
@@ -62,7 +62,10 @@ usuario.place(x=105, y=50)
 senha = Entry(separador, width=15, show="*", font=("Arial", 15, "bold"))
 senha.place(x=105, y=90)
 
-Button(separador, text="Entrar", command=login, background=c0, foreground=c1, font=("Arial", 15, "bold")).place(x=140, y=140)
+label_linha = Label(separador,width=100, text="",anchor=NE, font=("Arial", 2, "bold"), bg=c1 , fg=c1).place(x=0, y=132)
+label_linha = Label(separador,width=100, text="",anchor=NE, font=("Arial", 2, "bold"), bg=c1 , fg=c1).place(x=0, y=164)
+
+Button(separador, text="Entrar", command=login, background=c1, foreground=c0, font=("Arial", 15, "bold")).place(x=140, y=132)
 
 
 
