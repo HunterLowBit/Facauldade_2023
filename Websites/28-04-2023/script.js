@@ -12,7 +12,7 @@ const OPEN_AI_KEY = "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"
 function sendQuestion(){
 var sQuestion = inputQuestion.value;
 
-    fetch("http://api.openai.com/v1/completions", {
+    fetch("https://api.openai.com/v1/completions", {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -57,3 +57,5 @@ var sQuestion = inputQuestion.value;
 
    
 
+//fetch openai.com/docs/api?version=latest#text-davinci-003 
+//fetch("https://api.openai.com/v1/engines/davinci/completions", {
