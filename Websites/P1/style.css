@@ -48,5 +48,11 @@ textarea:focus{
 
 #result{
     height: 75%;
+  
 }
 
+.page-footer {
+    padding-top: 20px;
+    color: #fff;
+    background-color: #ff6e40;
+  }
