@@ -2947,6 +2947,9 @@ ul.staggered-list li {
   padding-top: 20px;
   color: #fff;
   background-color: #ff6e40;
+  height:10%;
+padding:5.5%;
+  
 }
 
 .page-footer .footer-copyright {
@@ -9132,7 +9135,7 @@ box-sizing: border-box;
 
 .slide {
   display: inline-block;
-  width: 700px;
+ width: 800px;
   height: 410px;
 }
 
@@ -9162,5 +9165,6 @@ box-sizing: border-box;
 }
 body {
 background-color: #000;
+
  
 }
