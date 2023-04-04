@@ -10,6 +10,7 @@ body {
     justify-content: center;
     width: 100vw;
     height: 100vw;
+    background-image: src="img/stars.png";
 }
 
 textarea{
