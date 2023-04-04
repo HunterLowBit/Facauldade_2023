@@ -59,3 +59,17 @@ var sQuestion = inputQuestion.value;
 
 //fetch openai.com/docs/api?version=latest#text-davinci-003 
 //fetch("https://api.openai.com/v1/engines/davinci/completions", {
+
+
+var instance = M.Carousel.init({
+    fullWidth: true,
+    indicators: true
+  });
+
+  // Or with jQuery
+
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+        
