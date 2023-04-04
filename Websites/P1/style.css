@@ -1,16 +1,20 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 1%;
     box-sizing: border-box;
 }
 
 body {
+    background-image: url("img/stars.jpg");
+    background-repeat:no-repeat;
+    background-attachment: scroll;
+    background-size: 100% 100%;
     background-color: black;
     display: flex;
     justify-content: center;
     width: 100vw;
     height: 100vw;
-    background-image: src="img/stars.png";
+   
 }
 
 textarea{
@@ -20,7 +24,7 @@ textarea{
     background-color: aliceblue;
     font-size: 24px;
     text-align: justify;
-    color: rgb(248, 150, 150);
+    color: rgb(0, 0, 0);
     outline: none;
 
 }
