@@ -7,7 +7,7 @@ janela.geometry("300x200")
 janela.resizable(width=FALSE, height=FALSE) 
 
 frame_login = Frame(janela, bg='black', height=200, width=300, relief='ridge')
-frame_login.grid(row=0, column=0,) 
+frame_login.grid(row=0, column=0) 
 
 def login():
     if (usuario.get() == "Robson" and senha.get() == "2402"):
