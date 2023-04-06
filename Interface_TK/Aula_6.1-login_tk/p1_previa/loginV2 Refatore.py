@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-     
+
 janela = Tk()
 janela.title("Sistema de login")
 janela.geometry("300x200")
