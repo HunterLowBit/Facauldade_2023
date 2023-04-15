@@ -2,8 +2,9 @@ from tkinter import *
 from tkinter import messagebox
 janela = Tk()
 janela.title("TESTE DE TEXTO")
-janela.geometry("300x200")
+janela.geometry("660x388")
 janela.config(background='black')
+janela.resizable(False, False)
 janela.option_add('tearOff', FALSE)
 
 
