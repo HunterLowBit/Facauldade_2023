@@ -28,4 +28,7 @@ scrollbar = Scrollbar(janela, command=texto.yview)
 scrollbar.grid(row=0, column=1, sticky="ns")
 texto.config(yscrollcommand=scrollbar.set)
 
+texto.insert('end', 'DIGITE AQUI!')
+
+
 janela.mainloop()
