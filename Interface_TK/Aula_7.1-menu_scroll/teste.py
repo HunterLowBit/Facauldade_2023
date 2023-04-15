@@ -50,9 +50,9 @@ menubar.add_cascade(label="Arquivo", menu=menu_arquivo)
 
 # Criar o menu "Editar"
 menu_editar = tk.Menu(menubar, tearoff=False)
-menu_editar.add_command(label="Copiar(CTRL+C)", command=copiar)
-menu_editar.add_command(label="Recortar(CTRL+X)", command=recortar)
-menu_editar.add_command(label="Colar(CTR+C)", command=colar)
+menu_editar.add_command(label="Copiar (CTRL+C)", command=copiar)
+menu_editar.add_command(label="Recortar (CTRL+X)", command=recortar)
+menu_editar.add_command(label="Colar (CTR+C)", command=colar)
 menubar.add_cascade(label="Editar", menu=menu_editar)
 
 # Criar a área de texto
