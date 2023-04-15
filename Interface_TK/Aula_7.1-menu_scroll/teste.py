@@ -21,7 +21,18 @@ def abrir_arquivo():
         texto.delete("1.0", "end")
         texto.insert("1.0", conteudo)
         arquivo.close()
-        
+
+def copiar():
+    texto.clipboard_clear()
+    texto.clipboard_append(texto.selection_get())
+
+def recortar():
+    texto.clipboard_clear()
+    texto.clipboard_append(texto.selection_get())
+    texto.delete("sel.first", "sel.last")
+
+def colar():
+    texto.insert("insert", texto.clipboard_get())        
 
 root = tk.Tk()
 
@@ -36,6 +47,13 @@ menu_arquivo.add_command(label="Salvar", command=salvar_como)
 menu_arquivo.add_separator()
 menu_arquivo.add_command(label="Sair", command=sair)
 menubar.add_cascade(label="Arquivo", menu=menu_arquivo)
+
+# Criar o menu "Editar"
+menu_editar = tk.Menu(menubar, tearoff=False)
+menu_editar.add_command(label="Copiar(CTRL+C)", command=copiar)
+menu_editar.add_command(label="Recortar(CTRL+X)", command=recortar)
+menu_editar.add_command(label="Colar(CTR+C)", command=colar)
+menubar.add_cascade(label="Editar", menu=menu_editar)
 
 # Criar a área de texto
 texto = tk.Text(root)
