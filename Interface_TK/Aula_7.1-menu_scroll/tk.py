@@ -9,8 +9,7 @@ janela.option_add('*tearOff', FALSE)
 
 def mensagem():
     messagebox.showinfo('EM CONSTRUÇÃO','Não esta pronto, aguarde')
-    messagebox.showerror('CP')
-    messagebox.askquestion('Pergunta','Tema escuro sim ou não?')
+ 
 
 #menu
 menubar = Menu(janela) 
