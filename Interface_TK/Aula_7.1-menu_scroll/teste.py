@@ -3,7 +3,7 @@ from tkinter import filedialog
 from tkinter import messagebox
 
 def sair():
-    root.quit()
+    janela.quit()
 
 def salvar_como():
     arquivo = filedialog.asksaveasfile(defaultextension=".txt", filetypes=[("Arquivo de Texto", "*.txt"), ("Todos os arquivos", "*.*")])
@@ -34,11 +34,11 @@ def recortar():
 def colar():
     texto.insert("insert", texto.clipboard_get())        
 
-root = tk.Tk()
+janela = tk.Tk()
 
 # Criar o menubar
-menubar = tk.Menu(root)
-root.config(menu=menubar)
+menubar = tk.Menu(janela)
+janela.config(menu=menubar)
 
 # Criar o menu "Arquivo"
 menu_arquivo = tk.Menu(menubar, tearoff=False)
@@ -56,12 +56,12 @@ menu_editar.add_command(label="Colar (CTR+C)", command=colar)
 menubar.add_cascade(label="Editar", menu=menu_editar)
 
 # Criar a área de texto
-texto = tk.Text(root)
+texto = tk.Text(janela)
 texto.grid(row=0, column=0, sticky="nsew")
 
 # Adicionar a barra de rolagem ao texto
-scrollbar = tk.Scrollbar(root, command=texto.yview)
+scrollbar = tk.Scrollbar(janela, command=texto.yview)
 scrollbar.grid(row=0, column=1, sticky="ns")
 texto.config(yscrollcommand=scrollbar.set)
 
-root.mainloop()
+janela.mainloop()
