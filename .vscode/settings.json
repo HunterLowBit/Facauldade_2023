@@ -3,5 +3,14 @@
     "cSpell.enableFiletypes": [
         "bat",
         "django-html"
-    ]
+    ],
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:Facauldade_2023}/produtos.db",
+            "name": "test"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
 }
