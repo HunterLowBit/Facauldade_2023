@@ -3,10 +3,10 @@ from tkinter import *
 
 def salvar():
     produto = produto_c.get()
-    preço = preço_c.get()
-    db.cria_db(produto,preço)
+    preco = preco_c.get()
+    db.cria_db(produto,preco)
     produto_c.delete(0,END)
-    preço_c.delete(0,END)
+    preco_c.delete(0,END)
 
 
 
@@ -24,8 +24,8 @@ label1 = Label(root, width=7, text='Preço',font=('Arial',15)).place(x=8,y=90)
 
 produto_c = Entry(root,width=15,font=('Arial',15))
 produto_c.place(x=110,y=50)
-preço_c = Entry(root, width=15,font=('Arial',15))
-preço_c.place(x=110,y=90)
+preco_c = Entry(root, width=15,font=('Arial',15))
+preco_c.place(x=110,y=90)
 
 Button(root, text="salvar",font=('Arial',12),bg="white",command=salvar).place(x=150,y=150)
 root.mainloop()
