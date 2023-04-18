@@ -39,7 +39,7 @@ def remover_produto():
             produto_id_str = sd.askstring(
                 "Remover Produto", "Digite o ID do produto que deseja remover:")
             try:
-                produto_id = int(produto_id_str)
+                produto_id = int(produto_id_str) # type: ignore
                 conn.execute(
                     "DELETE FROM produtos WHERE ID = ?", (produto_id,))
                 conn.commit()
