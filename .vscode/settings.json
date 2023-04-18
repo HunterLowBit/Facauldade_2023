@@ -1,16 +1,17 @@
 {
-    "python.analysis.typeCheckingMode": "basic",
-    "cSpell.enableFiletypes": [
-        "bat",
-        "django-html"
-    ],
-    "sqltools.connections": [
-        {
-            "previewLimit": 50,
-            "driver": "SQLite",
-            "database": "${workspaceFolder:Facauldade_2023}/produtos.db",
-            "name": "test"
-        }
-    ],
-    "sqltools.useNodeRuntime": true
+  "python.analysis.typeCheckingMode": "basic",
+  "cSpell.enableFiletypes": ["bat", "django-html"],
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "database": "${workspaceFolder:Facauldade_2023}/produtos.db",
+      "name": "test"
+    }
+  ],
+  "sqltools.useNodeRuntime": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "python.formatting.provider": "none"
 }
