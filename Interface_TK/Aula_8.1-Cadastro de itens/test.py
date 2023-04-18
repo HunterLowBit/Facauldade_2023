@@ -1,4 +1,6 @@
+import tkinter.simpledialog as sd
 import tkinter as tk
+import tkinter.messagebox as msg_box
 import sqlite3
 
 conn = sqlite3.connect('produtos.db')
@@ -17,18 +19,38 @@ def cadastrar_produto():
     status_label.configure(text="Produto cadastrado com sucesso!")
 
 
-def consultar_produtos():
+def exibir_produtos():
     consulta = conn.execute("SELECT * FROM produtos")
     produtos = consulta.fetchall()
-    for produto in produtos:
-        print(produto)
+    if produtos:
+        msg_box.showinfo("Produtos Cadastrados", produtos)  # type: ignore
+    else:
+        msg_box.showwarning("Produtos Cadastrados",
+                            "Nenhum produto cadastrado.")
 
 
 def remover_produto():
-    id_produto = int(input("Digite o ID do produto a ser removido: "))
-    conn.execute("DELETE FROM produtos WHERE ID = ?", (id_produto,))
-    conn.commit()
-    print("Produto removido com sucesso!")
+    consulta = conn.execute("SELECT * FROM produtos")
+    produtos = consulta.fetchall()
+    if produtos:
+        produto_id = msg_box.askquestion(
+            "Remover Produto", "Deseja realmente remover um produto?")
+        if produto_id == 'yes':
+            produto_id_str = sd.askstring(
+                "Remover Produto", "Digite o ID do produto que deseja remover:")
+            try:
+                produto_id = int(produto_id_str)
+                conn.execute(
+                    "DELETE FROM produtos WHERE ID = ?", (produto_id,))
+                conn.commit()
+                status_label.configure(text="Produto removido com sucesso!")
+            except ValueError:
+                status_label.configure(text="ID do produto inválido.")
+        else:
+            status_label.configure(text="Remoção de produto cancelada.")
+    else:
+        msg_box.showwarning("Produtos Cadastrados",
+                            "Nenhum produto cadastrado.")
 
 
 janela = tk.Tk()
@@ -54,15 +76,17 @@ status_label = tk.Label(janela, text="")
 status_label.grid(row=2, column=1)
 
 menu_bar = tk.Menu(janela)
+
+consultar_menu = tk.Menu(menu_bar, tearoff=0)
+menu_bar.add_cascade(label="Consultar", menu=consultar_menu)
+consultar_menu.add_command(label="Exibir Produtos", command=exibir_produtos)
+
+remover_menu = tk.Menu(menu_bar, tearoff=0)
+menu_bar.add_cascade(label="Remover", menu=remover_menu)
+remover_menu.add_command(label="Remover Produto", command=remover_produto)
+
 janela.config(menu=menu_bar)
 
-consulta_menu = tk.Menu(menu_bar, tearoff=0)
-menu_bar.add_cascade(label="Consultar", menu=consulta_menu)
-consulta_menu.add_command(label="Produtos Cadastrados",
-                          command=consultar_produtos)
-
-remocao_menu = tk.Menu(menu_bar, tearoff=0)
-menu_bar.add_cascade(label="Remover", menu=remocao_menu)
-remocao_menu.add_command(label="Remover Produto", command=remover_produto)
-
 janela.mainloop()
+
+conn.close()
