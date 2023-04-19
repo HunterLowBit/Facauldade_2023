@@ -10,3 +10,31 @@ input,
 button {
   margin-bottom: 10px;
 }
+body {
+  background-image: url(https://th.bing.com/th/id/R.6e2f491f39096c053538efdcc41bbf53?rik=Sj%2fwP5v35kBrpg&riu=http%3a%2f%2f2.bp.blogspot.com%2f-GKsQO1wd_Xg%2fUd-2PirmClI%2fAAAAAAAAnR0%2frFmOgZa-odw%2fs1600%2fBlock%2bHD%2bWallpapers%2b5.jpg&ehk=WKKY21r82%2ftXdKWfWeOGrab3VI6xhyJ0iQKf8uTPxTg%3d&risl=&pid=ImgRaw&r=0);
+  background-size: cover;
+}
+
+.cantoAfasta {
+  padding: 1px;
+  width: 100vh;
+  height: 10vh;
+}
+
+.desenho {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  border-width: 1px;
+  border-radius: 20px;
+  border-style: groove;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  margin-bottom: 1px;
+  box-sizing: border-box;
+  background-image: url(https://th.bing.com/th/id/R.96a214330be9529e20c294160f638df6?rik=77%2bpIliyFCVhAA&pid=ImgRaw&r=0);
+  background-size: cover;
+}
