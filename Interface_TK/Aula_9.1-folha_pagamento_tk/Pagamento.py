@@ -1,0 +1,1 @@
+#Criar um minisistema de calculo de folha de pagamento com tkinter. Com menus + regra de negócio do imposto de renda, inss e ect.
