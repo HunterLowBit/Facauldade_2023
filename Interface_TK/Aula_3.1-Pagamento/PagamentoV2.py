@@ -3,7 +3,6 @@ class Folha_Pagamento:
         self.__Sbruto = Sbruto
         self.Htrabalhadas = Htrabalhadas
 
-
     def get_Sbruto(self):
         return self.__Sbruto
 
@@ -15,7 +14,6 @@ class Folha_Pagamento:
 
     def set_horas_trabalhadas(self, Htrabalhadas):
         self.Htrabalhadas = Htrabalhadas
-
 
     def calcula_Sliquido(self):
         salario_liquido = self.__Sbruto
@@ -30,14 +28,17 @@ class Folha_Pagamento:
         desconto_inss = Sbruto * inss
         return desconto_inss
 
+
 funcionario1 = Folha_Pagamento(5000, 300)
 salario_liquido = funcionario1.calcula_Sliquido()
 desconto_inss = funcionario1.Calcula_inss()
 
-print(f'\nSalário líquido: R$ {salario_liquido:.2f}\nDesconto do INSS: R$ {desconto_inss:.2f}')
+print(
+    f'\nSalário líquido: R$ {salario_liquido:.2f}\nDesconto do INSS: R$ {desconto_inss:.2f}')
 
 funcionario2 = Folha_Pagamento(1500, 110)
 salario_liquido = funcionario2.calcula_Sliquido()
 desconto_inss = funcionario2.Calcula_inss()
 
-print(f'\nSalário líquido: R$ {salario_liquido:.2f}\nDesconto do INSS: R$ {desconto_inss:.2f}')
+print(
+    f'\nSalário líquido: R$ {salario_liquido:.2f}\nDesconto do INSS: R$ {desconto_inss:.2f}')
