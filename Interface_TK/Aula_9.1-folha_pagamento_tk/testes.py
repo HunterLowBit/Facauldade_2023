@@ -8,8 +8,10 @@ De 3.751,06 até 4.664,68	22,5%	        R$ 636,13
 Acima de 4.664,68	        27,5%	        R$ 869,36
 '''
 
-import sqlite3
+import tkinter.simpledialog as sd
 import tkinter as tk
+import tkinter.messagebox as msg_box
+import sqlite3
 
 # Cria o banco de dados SQLite
 conn = sqlite3.connect('cadastro.db')
@@ -32,6 +34,25 @@ def adicionar_cliente():
     listar_clientes()
 
 # Função para remover um cliente pelo ID
+def remover_id():
+    consulta = conn.execute("SELECT * FROM clientes")
+    cadastro = consulta.fetchall()
+    if cadastro:
+        cliente_id = msg_box.askquestion(
+            "Remover ID", "Deseja realmente remover um cadastro por 'ID'?")
+        if cliente_id == 'yes':
+            cliente_id_str = sd.askstring(
+                "Remover ID", "Digite o ID do produto que deseja remover:")
+            try:
+                cliente_id = int(cliente_id_str)  # type: ignore
+                conn.execute(
+                    "DELETE FROM clientes WHERE ID = ?", (cliente_id,))
+                conn.commit()
+            except ValueError:
+                msg_box.showerror(title="Erro", message="ID inválido")
+        else:
+            msg_box.showwarning("Produtos Cadastrados",
+                                "Nenhum produto cadastrado.")
 
 
 def remover_cliente():
@@ -41,15 +62,12 @@ def remover_cliente():
     listar_clientes()
 
 # Função para listar todos os clientes
-
-
 def listar_clientes():
     lista_clientes.delete(0, tk.END)
     cursor = conn.execute("SELECT * FROM clientes")
     for row in cursor:
         lista_clientes.insert(
             tk.END, f"{row[0]} | Nome: {row[1]} | Salario: {row[2]} | Cargo: {row[3]}")
-
 
 # Cria a janela principal
 janela = tk.Tk()
@@ -68,18 +86,18 @@ botao_adicionar = tk.Button(
     janela, text="Adicionar", command=adicionar_cliente)
 botao_remover = tk.Button(janela, text="Remover", command=remover_cliente)
 
+
 lista_clientes = tk.Listbox(janela)
 listar_clientes()
 
-#Menubar
+# Menubar
 menu_bar = tk.Menu(janela)
 
 remover_menu = tk.Menu(menu_bar, tearoff=0)
 menu_bar.add_cascade(label="Remover", menu=remover_menu)
-remover_menu.add_command(label="Remover Produto", command=remover_cliente)
+remover_menu.add_command(label="Remover por 'ID'", command=remover_id)
 
 janela.config(menu=menu_bar)
-
 
 # Define as propriedades dos widgets
 janela.title("Cadastro de Clientes")
