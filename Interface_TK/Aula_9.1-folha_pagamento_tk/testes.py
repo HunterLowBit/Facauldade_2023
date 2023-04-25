@@ -50,6 +50,7 @@ def listar_clientes():
         lista_clientes.insert(
             tk.END, f"{row[0]} | Nome: {row[1]} | Salario: {row[2]} | Cargo: {row[3]}")
 
+
 # Cria a janela principal
 janela = tk.Tk()
 
@@ -70,9 +71,19 @@ botao_remover = tk.Button(janela, text="Remover", command=remover_cliente)
 lista_clientes = tk.Listbox(janela)
 listar_clientes()
 
+#Menubar
+menu_bar = tk.Menu(janela)
+
+remover_menu = tk.Menu(menu_bar, tearoff=0)
+menu_bar.add_cascade(label="Remover", menu=remover_menu)
+remover_menu.add_command(label="Remover Produto", command=remover_cliente)
+
+janela.config(menu=menu_bar)
+
+
 # Define as propriedades dos widgets
 janela.title("Cadastro de Clientes")
-janela.geometry("300x300")
+janela.geometry("400x300")
 
 # Adiciona os widgets à janela
 rotulo_nome.pack()
