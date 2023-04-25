@@ -57,10 +57,10 @@ janela = tk.Tk()
 rotulo_nome = tk.Label(janela, text="Nome:")
 entrada_nome = tk.Entry(janela)
 
-rotulo_salario = tk.Label(janela, text="salario:")
+rotulo_salario = tk.Label(janela, text="Salario:")
 entrada_salario = tk.Entry(janela)
 
-rotulo_cargo = tk.Label(janela, text="cargo:")
+rotulo_cargo = tk.Label(janela, text="Cargo:")
 entrada_cargo = tk.Entry(janela)
 
 botao_adicionar = tk.Button(
