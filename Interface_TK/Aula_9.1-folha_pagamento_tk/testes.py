@@ -8,7 +8,6 @@ De 3.751,06 até 4.664,68	22,5%	        R$ 636,13
 Acima de 4.664,68	        27,5%	        R$ 869,36
 '''
 
-
 import sqlite3
 import tkinter as tk
 
@@ -17,19 +16,24 @@ conn = sqlite3.connect('cadastro.db')
 conn.execute('''CREATE TABLE IF NOT EXISTS clientes (
                 id INTEGER PRIMARY KEY,
                 nome TEXT NOT NULL,
-                telefone TEXT NOT NULL,
-                email TEXT NOT NULL)''')
+                salario TEXT NOT NULL,
+                cargo TEXT NOT NULL)''')
 
 # Função para adicionar um novo cliente
+
+
 def adicionar_cliente():
     nome = entrada_nome.get()
-    telefone = entrada_telefone.get()
-    email = entrada_email.get()
-    conn.execute("INSERT INTO clientes (nome, telefone, email) VALUES (?, ?, ?)", (nome, telefone, email))
+    salario = entrada_salario.get()
+    cargo = entrada_cargo.get()
+    conn.execute(
+        "INSERT INTO clientes (nome, salario, cargo) VALUES (?, ?, ?)", (nome, salario, cargo))
     conn.commit()
     listar_clientes()
 
 # Função para remover um cliente pelo ID
+
+
 def remover_cliente():
     id = lista_clientes.curselection()[0]+1
     conn.execute("DELETE FROM clientes WHERE id=?", (id,))
@@ -37,11 +41,14 @@ def remover_cliente():
     listar_clientes()
 
 # Função para listar todos os clientes
+
+
 def listar_clientes():
     lista_clientes.delete(0, tk.END)
     cursor = conn.execute("SELECT * FROM clientes")
     for row in cursor:
-        lista_clientes.insert(tk.END, f"{row[0]} | Nome: {row[1]} | Telefone: {row[2]} | Email: {row[3]}")
+        lista_clientes.insert(
+            tk.END, f"{row[0]} | Nome: {row[1]} | Salario: {row[2]} | Cargo: {row[3]}")
 
 # Cria a janela principal
 janela = tk.Tk()
@@ -50,13 +57,14 @@ janela = tk.Tk()
 rotulo_nome = tk.Label(janela, text="Nome:")
 entrada_nome = tk.Entry(janela)
 
-rotulo_telefone = tk.Label(janela, text="Telefone:")
-entrada_telefone = tk.Entry(janela)
+rotulo_salario = tk.Label(janela, text="salario:")
+entrada_salario = tk.Entry(janela)
 
-rotulo_email = tk.Label(janela, text="Email:")
-entrada_email = tk.Entry(janela)
+rotulo_cargo = tk.Label(janela, text="cargo:")
+entrada_cargo = tk.Entry(janela)
 
-botao_adicionar = tk.Button(janela, text="Adicionar", command=adicionar_cliente)
+botao_adicionar = tk.Button(
+    janela, text="Adicionar", command=adicionar_cliente)
 botao_remover = tk.Button(janela, text="Remover", command=remover_cliente)
 
 lista_clientes = tk.Listbox(janela)
@@ -70,16 +78,17 @@ janela.geometry("300x300")
 rotulo_nome.pack()
 entrada_nome.pack()
 
-rotulo_telefone.pack()
-entrada_telefone.pack()
+rotulo_salario.pack()
+entrada_salario.pack()
 
-rotulo_email.pack()
-entrada_email.pack()
+rotulo_cargo.pack()
+entrada_cargo.pack()
 
 botao_adicionar.pack(side=tk.LEFT)
 botao_remover.pack(side=tk.RIGHT)
 
-lista_clientes.pack(side=tk.TOP, fill=tk.BOTH, expand=1)  # expand=1 expanda todo o widget, enquanto fill
+# expand=1 expanda todo o widget, enquanto fill
+lista_clientes.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
 
 # Inicia o loop principal da janela
 janela.mainloop()
