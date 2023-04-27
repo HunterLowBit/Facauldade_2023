@@ -1,7 +1,5 @@
-import tkinter.simpledialog as sd
 import tkinter as tk
 import tkinter.messagebox as msg_box
-
 # Função para calcular o desconto
 def calcular_desconto():
     salario = float(entrada_salario.get())
@@ -38,10 +36,6 @@ entrada_cargo = tk.Entry(janela)
 
 # Menubar
 menu_bar = tk.Menu(janela)
-
-remover_menu = tk.Menu(menu_bar, tearoff=0)
-menu_bar.add_cascade(label="Remover", menu=remover_menu)
-remover_menu.add_command(label="Remover por 'ID'", command=lambda: None)
 
 calcular_menu = tk.Menu(menu_bar, tearoff=0)
 menu_bar.add_cascade(label="Calcular Desconto", menu=calcular_menu)
