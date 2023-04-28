@@ -14,13 +14,18 @@ def calcular_desconto():
         desconto_ir = (salario * 0.225) - 636.13
     else:
         desconto_ir = (salario * 0.275) - 869.36
-
+        
     desconto_inss = salario * 0.11
     salario_liquido = salario - desconto_ir - desconto_inss
 
     msg_box.showinfo(title="Desconto de Folha de Pagamento", 
-                     message=f"Salário: R${salario:.2f}\nDesconto IR: R${desconto_ir:.2f}\nDesconto INSS: R${desconto_inss:.2f}\nSalário Líquido: R${salario_liquido:.2f}")
+                     message=f"""Salário: R${salario:.2f}
+Desconto IR: R${desconto_ir:.2f}
+Desconto INSS: R${desconto_inss:.2f}
+                     
+Salário Líquido: R${salario_liquido:.2f}""")
 
+    
 # Cria a janela principal
 janela = tk.Tk()
 
@@ -40,7 +45,7 @@ menu_bar = tk.Menu(janela)
 calcular_menu = tk.Menu(menu_bar, tearoff=0)
 menu_bar.add_cascade(label="Calcular Desconto", menu=calcular_menu)
 calcular_menu.add_command(label="Calcular", command=calcular_desconto)
-calcular_menu.add_command(label="Sair", command=janela.destroy)   #adicionar opcao de sair do programa
+
 
 janela.config(menu=menu_bar)
 
