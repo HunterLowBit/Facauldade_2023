@@ -40,6 +40,7 @@ menu_bar = tk.Menu(janela)
 calcular_menu = tk.Menu(menu_bar, tearoff=0)
 menu_bar.add_cascade(label="Calcular Desconto", menu=calcular_menu)
 calcular_menu.add_command(label="Calcular", command=calcular_desconto)
+calcular_menu.add_command(label="Sair", command=janela.destroy)   #adicionar opcao de sair do programa
 
 janela.config(menu=menu_bar)
 
