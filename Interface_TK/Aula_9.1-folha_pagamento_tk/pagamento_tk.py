@@ -1,6 +1,6 @@
 import tkinter as tk
 import tkinter.messagebox as msg_box
-# Função para calcular o desconto
+# Função para calcular o desconto 
 def calcular_desconto():
     salario = float(entrada_salario.get())
     nome = str(entrada_nome.get())
