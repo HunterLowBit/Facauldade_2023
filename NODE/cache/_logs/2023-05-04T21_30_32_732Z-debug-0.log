@@ -1,0 +1,48 @@
+0 verbose cli C:\Users\ALUNO\Desktop\Facauldade_2023\NODE\app\node.exe C:\Users\ALUNO\Desktop\Facauldade_2023\NODE\app\node_modules\npm\bin\npm-cli.js
+1 info using npm@9.6.4
+2 info using node@v20.1.0
+3 timing npm:load:whichnode Completed in 1ms
+4 timing config:load:defaults Completed in 2ms
+5 timing config:load:file:C:\Users\ALUNO\Desktop\Facauldade_2023\NODE\app\node_modules\npm\npmrc Completed in 4ms
+6 timing config:load:builtin Completed in 5ms
+7 timing config:load:cli Completed in 1ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:C:\Users\ALUNO\Desktop\Facauldade_2023\work\.npmrc Completed in 1ms
+10 timing config:load:project Completed in 3ms
+11 timing config:load:file:C:\Users\ALUNO\.npmrc Completed in 0ms
+12 timing config:load:user Completed in 0ms
+13 timing config:load:file:C:\Users\ALUNO\Desktop\Facauldade_2023\NODE\app\etc\npmrc Completed in 1ms
+14 timing config:load:global Completed in 1ms
+15 timing config:load:setEnvs Completed in 0ms
+16 timing config:load Completed in 12ms
+17 timing npm:load:configload Completed in 12ms
+18 timing npm:load:mkdirpcache Completed in 1ms
+19 timing npm:load:mkdirplogs Completed in 0ms
+20 verbose title npm run dev
+21 verbose argv "run" "dev"
+22 timing npm:load:setTitle Completed in 1ms
+23 timing config:load:flatten Completed in 2ms
+24 timing npm:load:display Completed in 2ms
+25 verbose logfile logs-max:10 dir:C:\Users\ALUNO\Desktop\Facauldade_2023\NODE\cache\_logs\2023-05-04T21_30_32_732Z-
+26 verbose logfile C:\Users\ALUNO\Desktop\Facauldade_2023\NODE\cache\_logs\2023-05-04T21_30_32_732Z-debug-0.log
+27 timing npm:load:logFile Completed in 20ms
+28 timing npm:load:timers Completed in 0ms
+29 timing npm:load:configScope Completed in 0ms
+30 timing npm:load Completed in 37ms
+31 timing command:run Completed in 2ms
+32 verbose stack Error: ENOENT: no such file or directory, open 'C:\Users\ALUNO\Desktop\Facauldade_2023\work\package.json'
+33 verbose cwd C:\Users\ALUNO\Desktop\Facauldade_2023\work
+34 verbose Windows_NT 10.0.19045
+35 verbose node v20.1.0
+36 verbose npm  v9.6.4
+37 error code ENOENT
+38 error syscall open
+39 error path C:\Users\ALUNO\Desktop\Facauldade_2023\work/package.json
+40 error errno -4058
+41 error enoent ENOENT: no such file or directory, open 'C:\Users\ALUNO\Desktop\Facauldade_2023\work\package.json'
+42 error enoent This is related to npm not being able to find a file.
+42 error enoent
+43 verbose exit -4058
+44 timing npm Completed in 92ms
+45 verbose code -4058
+46 error A complete log of this run can be found in: C:\Users\ALUNO\Desktop\Facauldade_2023\NODE\cache\_logs\2023-05-04T21_30_32_732Z-debug-0.log
