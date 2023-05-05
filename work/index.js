@@ -11,7 +11,8 @@ http.createServer((request, response) => {
     });
 
     // 2. Write the announced text to the body of the page
-    response.write('Hello, World!\n Ta funcionando node portable');
+    response.write('Hello, World!\n Ta funcionando node portable\n');
+    response.write('este ip é no localhost:1337');
 
     // 3. Tell the server that all of the response headers and body have been sent
     response.end();
