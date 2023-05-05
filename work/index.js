@@ -1,29 +1,19 @@
 console.log('Esta funcionando')
 
-var http = require("http");
-http.createServer(function (request, response) {
-    // Send the HTTP header 
-    // HTTP Status: 200 : OK
-    // Content Type: text/plain
-    response.writeHead(200, {'Content-Type': 'text/plain'});
+// http://localhost:1337/
+const http = require('http'); // Loads the http module 
+
+http.createServer((request, response) => {
     
-    // Send the response body as "Hello World"
-    response.end('Hello World\n');
- }).listen(8081);
- 
- // Console will print the message
- console.log('Server running at http://127.0.0.1:8081/');
- var http = require("http");
+    // 1. Tell the browser everything is OK (Status code 200), and the data is in plain text
+    response.writeHead(200, {
+        'Content-Type': 'text/plain'
+    });
 
-http.createServer(function (request, response) {
-   // Send the HTTP header 
-   // HTTP Status: 200 : OK
-   // Content Type: text/plain
-   response.writeHead(200, {'Content-Type': 'text/plain'});
-   
-   // Send the response body as "Hello World"
-   response.end('Hello World\n');
-}).listen(8081);
+    // 2. Write the announced text to the body of the page
+    response.write('Hello, World!\n Ta funcionando node portable');
 
-// Console will print the message
-console.log('Server running at http://127.0.0.1:8081/');
+    // 3. Tell the server that all of the response headers and body have been sent
+    response.end();
+
+}).listen(1337); // 4. Tells the server what port to be on
