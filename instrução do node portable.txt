@@ -1,0 +1,3 @@
+Comando ao clonar repositorio -> abra terminal e digite: node\nodejs-portable.exe
+
+em seguida vai abrir o terminal, digite 2, enter, enter e vai executar o node de modo portable
