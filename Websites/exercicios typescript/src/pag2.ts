@@ -47,6 +47,8 @@ function exibirCarro(): void {
   const carro = new Carro(modelo, ano, cor, velocidade);
   const resultadoElement = document.getElementById("resultado");
   resultadoElement.innerText = carro.exibirInformacoes();
+
+  console.log("Carro exibido:", carro);
 }
 
 document
@@ -73,6 +75,8 @@ function exibirResultado(event: Event) {
 
   const resultadoElement = document.getElementById("resultado1");
   resultadoElement.innerText = `A soma dos números é: ${soma}`;
+
+  console.log("Soma calculada:", soma);
 }
 
 document
@@ -116,6 +120,8 @@ function cadastrarAnimal(event) {
   tipoInput.value = "";
 
   exibirListaAnimais();
+
+  console.log("Animal cadastrado:", animal);
 }
 
 function exibirListaAnimais() {
@@ -127,6 +133,8 @@ function exibirListaAnimais() {
     animalItem.innerHTML = animal.exibirInformacoes();
     listaAnimais.appendChild(animalItem);
   });
+
+  console.log("Lista de animais:", animais);
 }
 
 const animalForm = document.getElementById("animalForm");
@@ -157,6 +165,8 @@ function exibirListaPessoas() {
     pessoaItem.innerHTML = pessoa.exibirInformacoes();
     listaPessoas.appendChild(pessoaItem);
   });
+
+  console.log("Lista de pessoas:", pessoas);
 }
 
 const pessoas = [];
@@ -180,6 +190,8 @@ function cadastrarPessoa(event) {
   enderecoInput.value = "";
 
   exibirListaPessoas();
+
+  console.log("Pessoa cadastrada:", pessoa);
 }
 
 const cadastroForm = document.getElementById("cadastroForm");
@@ -196,6 +208,8 @@ function aplicarConversao(event) {
   const textoConvertido = converterParaMinusculas(texto);
 
   document.getElementById("resultadoMinusculas").innerText = textoConvertido;
+
+  console.log("Texto convertido:", textoConvertido);
 }
 
 document
@@ -267,3 +281,5 @@ contaForm.addEventListener("submit", function (event) {
     valorInput.value = "";
   });
 });
+
+console.log("Código carregado com sucesso!");

@@ -87,6 +87,8 @@ function adicionarProduto(event: Event) {
   produtoList.appendChild(produtoItem);
 
   document.getElementById("exercicio12").reset();
+
+  console.log("Produto adicionado:", novoProduto);
 }
 
 document
@@ -135,6 +137,8 @@ function cadastrarAnimal(event: Event) {
   donoInput.value = "";
 
   exibirListaAnimais();
+
+  console.log("Animal cadastrado:", animal);
 }
 
 function exibirListaAnimais() {
@@ -146,6 +150,8 @@ function exibirListaAnimais() {
     animalItem.innerHTML = animal.exibirInformacoes();
     listaAnimais.appendChild(animalItem);
   });
+
+  console.log("Lista de animais:", animais);
 }
 
 const animalForm = document.getElementById("animalForm");
@@ -163,6 +169,8 @@ function inverterString(event: Event) {
 
   const resultElement = document.getElementById("result");
   resultElement.textContent = reversedString;
+
+  console.log("String invertida:", reversedString);
 }
 
 function reverseString(str: string): string {
@@ -213,6 +221,8 @@ function cadastrarLivro(event: Event) {
   paginasInput.value = "";
 
   exibirListaLivros();
+
+  console.log("Livro cadastrado:", livro);
 }
 
 function exibirListaLivros() {
@@ -224,6 +234,8 @@ function exibirListaLivros() {
     livroItem.innerHTML = livro.exibirInformacoes();
     listaLivros.appendChild(livroItem);
   });
+
+  console.log("Lista de livros:", livros);
 }
 
 const livroForm = document.getElementById("livroForm");

@@ -28,6 +28,7 @@ function exibirCarro() {
     const carro = new Carro(modelo, ano, cor, velocidade);
     const resultadoElement = document.getElementById("resultado");
     resultadoElement.innerText = carro.exibirInformacoes();
+    console.log("Carro exibido:", carro);
 }
 document
     .getElementById("exercicio5")
@@ -46,6 +47,7 @@ function exibirResultado(event) {
     const soma = calcularSoma(numeros);
     const resultadoElement = document.getElementById("resultado1");
     resultadoElement.innerText = `A soma dos números é: ${soma}`;
+    console.log("Soma calculada:", soma);
 }
 document
     .getElementById("exercicio6")
@@ -75,6 +77,7 @@ function cadastrarAnimal(event) {
     idadeInput.value = "";
     tipoInput.value = "";
     exibirListaAnimais();
+    console.log("Animal cadastrado:", animal);
 }
 function exibirListaAnimais() {
     const listaAnimais = document.getElementById("listaAnimais");
@@ -84,6 +87,7 @@ function exibirListaAnimais() {
         animalItem.innerHTML = animal.exibirInformacoes();
         listaAnimais.appendChild(animalItem);
     });
+    console.log("Lista de animais:", animais);
 }
 const animalForm = document.getElementById("animalForm");
 animalForm.addEventListener("submit", cadastrarAnimal);
@@ -105,6 +109,7 @@ function exibirListaPessoas() {
         pessoaItem.innerHTML = pessoa.exibirInformacoes();
         listaPessoas.appendChild(pessoaItem);
     });
+    console.log("Lista de pessoas:", pessoas);
 }
 const pessoas = [];
 function cadastrarPessoa(event) {
@@ -121,6 +126,7 @@ function cadastrarPessoa(event) {
     idadeInput.value = "";
     enderecoInput.value = "";
     exibirListaPessoas();
+    console.log("Pessoa cadastrada:", pessoa);
 }
 const cadastroForm = document.getElementById("cadastroForm");
 cadastroForm.addEventListener("submit", cadastrarPessoa);
@@ -132,6 +138,7 @@ function aplicarConversao(event) {
     const texto = document.getElementById("textoInput").value;
     const textoConvertido = converterParaMinusculas(texto);
     document.getElementById("resultadoMinusculas").innerText = textoConvertido;
+    console.log("Texto convertido:", textoConvertido);
 }
 document
     .getElementById("exercicio9")
@@ -191,3 +198,4 @@ contaForm.addEventListener("submit", function (event) {
         valorInput.value = "";
     });
 });
+console.log("Código carregado com sucesso!");

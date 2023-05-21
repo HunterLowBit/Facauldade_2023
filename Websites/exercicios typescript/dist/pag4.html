@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina 4 de Exercícios</title>
+    <script src="js/pag4.js" defer></script>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div>
+        <a
+          href="https://github.com/HunterLowBit/Facauldade_2023/tree/main/Websites/exercicios%20typescript"
+          >Pasta dos Exercícios</a
+        >
+      </div>
+      <a href="index.html">Página 1</a>
+      <a href="pag2.html">Página 2</a>
+      <a href="pag3.html">Página 3</a>
+      Página 4
+
+      <div>
+        <img
+          class="profile-image"
+          src="https://avatars.githubusercontent.com/u/53387930?v=4"
+          alt="Foto de Perfil"
+        />
+      </div>
+    </nav>
+
+    <div class="exercicio">
+      <h2>Exercício 16 - MENOR VALOR</h2>
+      <form id="menorElementoForm">
+        <label for="numerosInput"
+          >Digite os números separados por vírgula:</label
+        >
+        <input type="text" id="numerosInput" name="numerosInput" />
+        <button type="submit">Encontrar Menor Elemento</button>
+      </form>
+      <p id="resultado"></p>
+    </div>
+
+    <div class="exercicio">
+      <h2>Exercício 17 - FUNCIONÁRIO</h2>
+      <form id="funcionarioForm">
+        <label for="nomeInput">Nome:</label>
+        <input type="text" id="nomeInput" name="nomeInput" required />
+
+        <label for="cargoInput">Cargo:</label>
+        <input type="text" id="cargoInput" name="cargoInput" required />
+
+        <label for="salarioInput">Salário:</label>
+        <input type="number" id="salarioInput" name="salarioInput" required />
+
+        <button type="submit">Adicionar Funcionário</button>
+      </form>
+
+      <h3>Lista de Funcionários</h3>
+      <ul id="listaFuncionarios"></ul>
+    </div>
+    <div class="exercicio">
+      <h2>Exercício 18 - CASA</h2>
+
+      <h3>Cadastrar Casa</h3>
+      <form id="casaForm">
+        <label for="enderecoInput">Endereço:</label>
+        <input type="text" id="enderecoInput" required />
+
+        <label for="numeroQuartosInput">Número de quartos:</label>
+        <input type="number" id="numeroQuartosInput" required />
+
+        <label for="tamanhoTerrenoInput"
+          >Tamanho do terreno (em metros quadrados):</label
+        >
+        <input type="number" id="tamanhoTerrenoInput" required />
+
+        <button type="submit">Cadastrar</button>
+      </form>
+
+      <h3>Casas Cadastradas</h3>
+      <div id="casasCadastradas"></div>
+    </div>
+    <div class="exercicio">
+      <h2>Exercício 19 - REMOVER ESPAÇOS</h2>
+      <form id="removerEspacosForm">
+        <label for="inputString">Digite uma string:</label>
+        <input type="text" id="inputString" required />
+
+        <button type="submit">Remover Espaços</button>
+      </form>
+      <p id="resultado1"></p>
+    </div>
+    <div class="exercicio">
+      <h2>Exercício 20 - CELULAR</h2>
+      <form id="celularForm">
+        <label for="marcaInput">Marca:</label>
+        <input type="text" id="marcaInput" name="marcaInput" required />
+
+        <label for="modeloInput">Modelo:</label>
+        <input type="text" id="modeloInput" name="modeloInput" required />
+
+        <label for="soInput">Sistema Operacional:</label>
+        <input type="text" id="soInput" name="soInput" required />
+
+        <label for="capacidadeInput">Capacidade de Armazenamento:</label>
+        <input
+          type="number"
+          id="capacidadeInput"
+          name="capacidadeInput"
+          required
+        />
+
+        <button type="submit">Adicionar Celular</button>
+      </form>
+
+      <h3>Celulares Cadastrados:</h3>
+      <ul id="listaCelulares"></ul>
+    </div>
+  </body>
+</html>
