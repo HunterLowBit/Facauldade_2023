@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina 2 de Exercícios</title>
+    <script src="js/pag2.js" defer></script>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div>
+        <a
+          href="https://github.com/HunterLowBit/Facauldade_2023/tree/main/Websites/exercicios%20typescript"
+          >Pasta dos Exercícios</a
+        >
+      </div>
+      <a href="index.html">Página 1</a>
+      <a href="pag3.html">Página 3</a>
+
+      <div>
+        <img
+          class="profile-image"
+          src="https://avatars.githubusercontent.com/u/53387930?v=4"
+          alt="Foto de Perfil"
+        />
+      </div>
+    </nav>
+
+    <h2>Exercício 5</h2>
+    <form id="exercicio5">
+      <label for="modeloInput">Modelo:</label>
+      <input type="text" id="modeloInput" /><br />
+
+      <label for="anoInput">Ano:</label>
+      <input type="number" id="anoInput" /><br />
+
+      <label for="corInput">Cor:</label>
+      <input type="text" id="corInput" /><br />
+
+      <label for="velocidadeInput">Velocidade Atual:</label>
+      <input type="number" id="velocidadeInput" /><br />
+
+      <button type="submit">Exibir Informações</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <h2>Exercício 6</h2>
+    <form id="exercicio6">
+      <label for="numerosInput">Digite os números separados por vírgula:</label>
+      <input type="text" id="numerosInput" />
+      <button type="submit">Calcular Soma</button>
+    </form>
+
+    <div id="resultado1"></div>
+
+    <h2>Exercício 7</h2>
+    <form id="animalForm">
+      <label for="nomeInput">Nome:</label>
+      <input type="text" id="nomeInput" name="nomeInput" required />
+
+      <label for="idadeInput">Idade:</label>
+      <input type="number" id="idadeInput" name="idadeInput" required />
+
+      <label for="tipoInput">Tipo:</label>
+      <input type="text" id="tipoInput" name="tipoInput" required />
+
+      <button type="submit">Cadastrar</button>
+    </form>
+    <ul id="listaAnimais"></ul>
+
+    <h2>Exercício 8</h2>
+    <form id="cadastroForm">
+      <label for="nomeInputPessoa">Nome:</label>
+      <input type="text" id="nomeInputPessoa" /><br />
+      <label for="idadeInputPessoa">Idade:</label>
+      <input type="number" id="idadeInputPessoa" /><br />
+      <label for="enderecoInputPessoa">Endereço:</label>
+      <input type="text" id="enderecoInputPessoa" /><br />
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <h2>Lista de Pessoas</h2>
+    <ul id="pessoasList"></ul>
+
+    <h2>Exercício 9</h2>
+    <form id="exercicio9">
+      <label for="textoInput">Digite um texto:</label>
+      <input type="text" id="textoInput" />
+      <button type="submit">Converter para Minúsculas</button>
+    </form>
+
+    <div id="resultadoMinusculas"></div>
+
+    <h2>Exercício 10</h2>
+    <form id="contaForm">
+      <label for="numeroContaInput">Número da Conta:</label>
+      <input type="text" id="numeroContaInput" required /><br />
+
+      <label for="saldoInput">Saldo Inicial:</label>
+      <input type="number" id="saldoInput" required /><br />
+
+      <button type="submit">Criar Conta</button>
+    </form>
+
+    <h2>Operações Bancárias</h2>
+    <form id="operacoesForm">
+      <label for="valorInput">Valor:</label>
+      <input type="number" id="valorInput" required /><br />
+
+      <button type="button" id="depositoButton">Depósito</button>
+      <button type="button" id="saqueButton">Saque</button>
+    </form>
+
+    <h2>Extrato Bancário</h2>
+    <ul id="extratoList"></ul>
+  </body>
+</html>

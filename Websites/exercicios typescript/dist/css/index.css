@@ -15,7 +15,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(255, 255, 255);
+  background-color: blanchedalmond;
   background-blend-mode: color-burn;
   height: 70px;
   padding: 0 20px;
@@ -26,4 +26,3 @@ body {
   height: 50px;
   border-radius: 50%;
 }
-
