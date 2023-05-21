@@ -1,0 +1,13 @@
+
+* {
+  /*deletar isso quando acabar*/
+  outline: 1px solid red;
+} /*deletar isso quando acabar*/
+body{
+  background-color: blanchedalmond;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 1%;
+  padding: 1%;
+}
