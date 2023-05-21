@@ -17,6 +17,7 @@
         >
       </div>
       <a href="index.html">Página 1</a>
+      Página 2
       <a href="pag3.html">Página 3</a>
 
       <div>
@@ -27,94 +28,102 @@
         />
       </div>
     </nav>
+    <div class="exercicio">
+      <h2>Exercício 5 CARRO</h2>
+      <form id="exercicio5">
+        <label for="modeloInput">Modelo:</label>
+        <input type="text" id="modeloInput" /><br />
 
-    <h2>Exercício 5</h2>
-    <form id="exercicio5">
-      <label for="modeloInput">Modelo:</label>
-      <input type="text" id="modeloInput" /><br />
+        <label for="anoInput">Ano:</label>
+        <input type="number" id="anoInput" /><br />
 
-      <label for="anoInput">Ano:</label>
-      <input type="number" id="anoInput" /><br />
+        <label for="corInput">Cor:</label>
+        <input type="text" id="corInput" /><br />
 
-      <label for="corInput">Cor:</label>
-      <input type="text" id="corInput" /><br />
+        <label for="velocidadeInput">Velocidade Atual:</label>
+        <input type="number" id="velocidadeInput" /><br />
 
-      <label for="velocidadeInput">Velocidade Atual:</label>
-      <input type="number" id="velocidadeInput" /><br />
+        <button type="submit">Exibir Informações</button>
+      </form>
 
-      <button type="submit">Exibir Informações</button>
-    </form>
+      <div id="resultado"></div>
+    </div>
+    <div class="exercicio">
+      <h2>Exercício 6 SOMA</h2>
+      <form id="exercicio6">
+        <label for="numerosInput"
+          >Digite os números separados por vírgula:</label
+        >
+        <input type="text" id="numerosInput" />
+        <button type="submit">Calcular Soma</button>
+      </form>
 
-    <div id="resultado"></div>
+      <div id="resultado1"></div>
+    </div>
+    <div class="exercicio">
+      <h2>Exercício 7 ANIMAL</h2>
+      <form id="animalForm">
+        <label for="nomeInput">Nome:</label>
+        <input type="text" id="nomeInput" name="nomeInput" required />
 
-    <h2>Exercício 6</h2>
-    <form id="exercicio6">
-      <label for="numerosInput">Digite os números separados por vírgula:</label>
-      <input type="text" id="numerosInput" />
-      <button type="submit">Calcular Soma</button>
-    </form>
+        <label for="idadeInput">Idade:</label>
+        <input type="number" id="idadeInput" name="idadeInput" required />
 
-    <div id="resultado1"></div>
+        <label for="tipoInput">Tipo:</label>
+        <input type="text" id="tipoInput" name="tipoInput" required />
 
-    <h2>Exercício 7</h2>
-    <form id="animalForm">
-      <label for="nomeInput">Nome:</label>
-      <input type="text" id="nomeInput" name="nomeInput" required />
+        <button type="submit">Cadastrar</button>
+      </form>
+      <ul id="listaAnimais"></ul>
+    </div>
+    <div class="exercicio">
+      <h2>Exercício 8 PESSOAS</h2>
+      <form id="cadastroForm">
+        <label for="nomeInputPessoa">Nome:</label>
+        <input type="text" id="nomeInputPessoa" /><br />
+        <label for="idadeInputPessoa">Idade:</label>
+        <input type="number" id="idadeInputPessoa" /><br />
+        <label for="enderecoInputPessoa">Endereço:</label>
+        <input type="text" id="enderecoInputPessoa" /><br />
+        <button type="submit">Cadastrar</button>
+      </form>
 
-      <label for="idadeInput">Idade:</label>
-      <input type="number" id="idadeInput" name="idadeInput" required />
+      <h2>Lista de Pessoas</h2>
+      <ul id="pessoasList"></ul>
+    </div>
+    <div class="exercicio">
+      <h2>Exercício 9 CONVERSÃO PARA MINÚSCULAS</h2>
+      <form id="exercicio9">
+        <label for="textoInput">Digite um texto:</label>
+        <input type="text" id="textoInput" />
+        <button type="submit">Converter para Minúsculas</button>
+      </form>
 
-      <label for="tipoInput">Tipo:</label>
-      <input type="text" id="tipoInput" name="tipoInput" required />
+      <div id="resultadoMinusculas"></div>
+    </div>
+    <div class="exercicio">
+      <h2>Exercício 10 BANCO</h2>
+      <form id="contaForm">
+        <label for="numeroContaInput">Número da Conta:</label>
+        <input type="text" id="numeroContaInput" required /><br />
 
-      <button type="submit">Cadastrar</button>
-    </form>
-    <ul id="listaAnimais"></ul>
+        <label for="saldoInput">Saldo Inicial:</label>
+        <input type="number" id="saldoInput" required /><br />
 
-    <h2>Exercício 8</h2>
-    <form id="cadastroForm">
-      <label for="nomeInputPessoa">Nome:</label>
-      <input type="text" id="nomeInputPessoa" /><br />
-      <label for="idadeInputPessoa">Idade:</label>
-      <input type="number" id="idadeInputPessoa" /><br />
-      <label for="enderecoInputPessoa">Endereço:</label>
-      <input type="text" id="enderecoInputPessoa" /><br />
-      <button type="submit">Cadastrar</button>
-    </form>
+        <button type="submit">Criar Conta</button>
+      </form>
 
-    <h2>Lista de Pessoas</h2>
-    <ul id="pessoasList"></ul>
+      <h2>Operações Bancárias</h2>
+      <form id="operacoesForm">
+        <label for="valorInput">Valor:</label>
+        <input type="number" id="valorInput" required /><br />
 
-    <h2>Exercício 9</h2>
-    <form id="exercicio9">
-      <label for="textoInput">Digite um texto:</label>
-      <input type="text" id="textoInput" />
-      <button type="submit">Converter para Minúsculas</button>
-    </form>
+        <button type="button" id="depositoButton">Depósito</button>
+        <button type="button" id="saqueButton">Saque</button>
+      </form>
 
-    <div id="resultadoMinusculas"></div>
-
-    <h2>Exercício 10</h2>
-    <form id="contaForm">
-      <label for="numeroContaInput">Número da Conta:</label>
-      <input type="text" id="numeroContaInput" required /><br />
-
-      <label for="saldoInput">Saldo Inicial:</label>
-      <input type="number" id="saldoInput" required /><br />
-
-      <button type="submit">Criar Conta</button>
-    </form>
-
-    <h2>Operações Bancárias</h2>
-    <form id="operacoesForm">
-      <label for="valorInput">Valor:</label>
-      <input type="number" id="valorInput" required /><br />
-
-      <button type="button" id="depositoButton">Depósito</button>
-      <button type="button" id="saqueButton">Saque</button>
-    </form>
-
-    <h2>Extrato Bancário</h2>
-    <ul id="extratoList"></ul>
+      <h2>Extrato Bancário</h2>
+      <ul id="extratoList"></ul>
+    </div>
   </body>
 </html>
