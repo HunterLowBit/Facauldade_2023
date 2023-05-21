@@ -150,3 +150,81 @@ function exibirListaAnimais() {
 
 const animalForm = document.getElementById("animalForm");
 animalForm.addEventListener("submit", cadastrarAnimal);
+
+function inverterString(event: Event) {
+  event.preventDefault();
+
+  const stringInput = document.getElementById(
+    "stringInput"
+  ) as HTMLInputElement;
+  const string = stringInput.value;
+
+  const reversedString = reverseString(string);
+
+  const resultElement = document.getElementById("result");
+  resultElement.textContent = reversedString;
+}
+
+function reverseString(str: string): string {
+  return str.split("").reverse().join("");
+}
+
+const reverseForm = document.getElementById("reverseForm");
+reverseForm.addEventListener("submit", inverterString);
+
+class Livro {
+  titulo: string;
+  autor: string;
+  paginas: number;
+
+  constructor(titulo: string, autor: string, paginas: number) {
+    this.titulo = titulo;
+    this.autor = autor;
+    this.paginas = paginas;
+  }
+
+  exibirInformacoes(): string {
+    return `<li>Título: ${this.titulo}, Autor: ${this.autor}, Páginas: ${this.paginas}</li>`;
+  }
+}
+
+const livros: Livro[] = [];
+
+function cadastrarLivro(event: Event) {
+  event.preventDefault();
+
+  const tituloInput = document.getElementById(
+    "tituloInput"
+  ) as HTMLInputElement;
+  const autorInput = document.getElementById("autorInput") as HTMLInputElement;
+  const paginasInput = document.getElementById(
+    "paginasInput"
+  ) as HTMLInputElement;
+
+  const titulo = tituloInput.value;
+  const autor = autorInput.value;
+  const paginas = Number(paginasInput.value);
+
+  const livro = new Livro(titulo, autor, paginas);
+  livros.push(livro);
+
+  tituloInput.value = "";
+  autorInput.value = "";
+  paginasInput.value = "";
+
+  exibirListaLivros();
+}
+
+function exibirListaLivros() {
+  const listaLivros = document.getElementById("listaLivros");
+  listaLivros.innerHTML = "";
+
+  livros.forEach((livro) => {
+    const livroItem = document.createElement("li");
+    livroItem.innerHTML = livro.exibirInformacoes();
+    listaLivros.appendChild(livroItem);
+  });
+}
+
+const livroForm = document.getElementById("livroForm");
+livroForm.addEventListener("submit", cadastrarLivro);

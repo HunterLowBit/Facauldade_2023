@@ -101,3 +101,53 @@ function exibirListaAnimais() {
 }
 const animalForm = document.getElementById("animalForm");
 animalForm.addEventListener("submit", cadastrarAnimal);
+function inverterString(event) {
+    event.preventDefault();
+    const stringInput = document.getElementById("stringInput");
+    const string = stringInput.value;
+    const reversedString = reverseString(string);
+    const resultElement = document.getElementById("result");
+    resultElement.textContent = reversedString;
+}
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+const reverseForm = document.getElementById("reverseForm");
+reverseForm.addEventListener("submit", inverterString);
+class Livro {
+    constructor(titulo, autor, paginas) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.paginas = paginas;
+    }
+    exibirInformacoes() {
+        return `<li>Título: ${this.titulo}, Autor: ${this.autor}, Páginas: ${this.paginas}</li>`;
+    }
+}
+const livros = [];
+function cadastrarLivro(event) {
+    event.preventDefault();
+    const tituloInput = document.getElementById("tituloInput");
+    const autorInput = document.getElementById("autorInput");
+    const paginasInput = document.getElementById("paginasInput");
+    const titulo = tituloInput.value;
+    const autor = autorInput.value;
+    const paginas = Number(paginasInput.value);
+    const livro = new Livro(titulo, autor, paginas);
+    livros.push(livro);
+    tituloInput.value = "";
+    autorInput.value = "";
+    paginasInput.value = "";
+    exibirListaLivros();
+}
+function exibirListaLivros() {
+    const listaLivros = document.getElementById("listaLivros");
+    listaLivros.innerHTML = "";
+    livros.forEach((livro) => {
+        const livroItem = document.createElement("li");
+        livroItem.innerHTML = livro.exibirInformacoes();
+        listaLivros.appendChild(livroItem);
+    });
+}
+const livroForm = document.getElementById("livroForm");
+livroForm.addEventListener("submit", cadastrarLivro);
