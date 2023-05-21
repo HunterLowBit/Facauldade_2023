@@ -84,3 +84,6 @@ function adicionarProduto(event) {
 document
   .getElementById("exercicio3")
   .addEventListener("submit", adicionarProduto);
+
+
+  
