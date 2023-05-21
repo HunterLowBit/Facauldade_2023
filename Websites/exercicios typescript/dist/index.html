@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test</title>
+    <title>Pagina de Exercícios</title>
     <script src="js/index.js" defer></script>
     <link rel="stylesheet" href="css/index.css" />
   </head>
@@ -13,7 +13,7 @@
       <div>
         <a
           href="https://github.com/HunterLowBit/Facauldade_2023/tree/main/Websites/exercicios%20typescript"
-          >Pasta dos exercícios</a
+          >Pasta dos Exercícios</a
         >
       </div>
 
@@ -26,32 +26,36 @@
       </div>
     </nav>
 
+    <h2>Exercício 1</h2>
     <form id="exercicio1">
-      <h1>Exercício 1</h1>
       <label for="numeroInput">Digite um número:</label>
       <input type="number" id="numeroInput" name="numeroInput" />
       <button type="submit">Calcular Dobro</button>
     </form>
-    <div id="resultado"></div>
+    <p id="resultado"></p>
 
-    <h1>Exercício 2</h1>
+    <h2>Exercício 2</h2>
     <div id="exercicio2"></div>
 
-    <h1>Exercício 3</h1>
+    <h2>Exercício 3</h2>
     <form id="exercicio3">
-      <label for="nomeInput">Nome:</label>
+      <label for="nomeInput">Nome do produto:</label>
       <input type="text" id="nomeInput" name="nomeInput" />
-
-      <label for="precoInput">Preço:</label>
+      <label for="precoInput">Preço do produto:</label>
       <input type="text" id="precoInput" name="precoInput" />
-
-      <label for="quantidadeInput">Quantidade em Estoque:</label>
+      <label for="quantidadeInput">Quantidade em estoque:</label>
       <input type="number" id="quantidadeInput" name="quantidadeInput" />
-
       <button type="submit">Adicionar Produto</button>
     </form>
-
-    <h2>Produtos</h2>
     <ul id="produtoList"></ul>
+
+    <h2>Exercício 4</h2>
+    <form id="exercicio4">
+      <label for="textoInput">Digite um texto:</label>
+      <input type="text" id="textoInput" />
+      <button type="submit">Converter para Maiúsculas</button>
+    </form>
+
+    <div id="resultadoMaiusculas"></div>
   </body>
 </html>

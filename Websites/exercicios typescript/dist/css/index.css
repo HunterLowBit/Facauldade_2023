@@ -1,6 +1,6 @@
 * {
   /*deletar isso quando acabar*/
-  outline: 1px solid red;
+  outline: 1px solid rgb(255, 255, 255);
 } /*deletar isso quando acabar*/
 body {
   background-color: blanchedalmond;
@@ -15,14 +15,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
+  background-blend-mode: color-burn;
   height: 70px;
   padding: 0 20px;
 }
 
-/* Define as propriedades da imagem */
 .profile-image {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
+

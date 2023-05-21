@@ -11,23 +11,23 @@ document
     document.getElementById("resultado").innerText = "O dobro é: " + dobro;
   });
 
-function main(): void {
+function exibirTexto(user) {
+  const divElement = document.getElementById("exercicio2");
+  divElement.innerHTML = `<p>Nome: ${user.name}</p><p>Idade: ${user.age}</p><p>E-mail: ${user.email}</p>`;
+}
+
+function main() {
   interface User {
     name: string;
     age: number;
     email: string;
   }
 
-  const user: User = {
+  const user = {
     name: prompt("Digite seu nome:"),
     age: Number(prompt("Digite sua idade:")),
     email: prompt("Digite seu e-mail:"),
   };
-
-  function exibirTexto(user: User): void {
-    const divElement = document.getElementById("exercicio2");
-    divElement.innerHTML = `<p>Nome: ${user.name}</p><p>Idade: ${user.age}</p><p>E-mail: ${user.email}</p>`;
-  }
 
   exibirTexto(user);
 }
@@ -35,25 +35,18 @@ function main(): void {
 main();
 
 class Produto {
-  nome: string;
-  preco: number;
-  quantidadeEstoque: number;
+  nome;
+  preco;
+  quantidadeEstoque;
 
-  constructor(nome: string, preco: number, quantidadeEstoque: number) {
+  constructor(nome, preco, quantidadeEstoque) {
     this.nome = nome;
     this.preco = preco;
     this.quantidadeEstoque = quantidadeEstoque;
   }
 
-  exibirInformacoes(): string {
-    return (
-      "Nome: " +
-      this.nome +
-      ", Preço: " +
-      this.preco +
-      ", Quantidade em estoque: " +
-      this.quantidadeEstoque
-    );
+  exibirInformacoes() {
+    return `Nome: ${this.nome}, Preço: ${this.preco}, Quantidade em estoque: ${this.quantidadeEstoque}`;
   }
 }
 
@@ -85,5 +78,19 @@ document
   .getElementById("exercicio3")
   .addEventListener("submit", adicionarProduto);
 
+function converterParaMaiusculas(texto) {
+  return texto.toUpperCase();
+}
 
-  
+function aplicarConversao(event) {
+  event.preventDefault();
+
+  const texto = document.getElementById("textoInput").value;
+  const textoConvertido = converterParaMaiusculas(texto);
+
+  document.getElementById("resultadoMaiusculas").innerText = textoConvertido;
+}
+
+document
+  .getElementById("exercicio4")
+  .addEventListener("submit", aplicarConversao);

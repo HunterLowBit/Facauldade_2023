@@ -10,16 +10,16 @@ document
     const dobro = calcularDobro(numero);
     document.getElementById("resultado").innerText = "O dobro é: " + dobro;
 });
+function exibirTexto(user) {
+    const divElement = document.getElementById("exercicio2");
+    divElement.innerHTML = `<p>Nome: ${user.name}</p><p>Idade: ${user.age}</p><p>E-mail: ${user.email}</p>`;
+}
 function main() {
     const user = {
         name: prompt("Digite seu nome:"),
         age: Number(prompt("Digite sua idade:")),
         email: prompt("Digite seu e-mail:"),
     };
-    function exibirTexto(user) {
-        const divElement = document.getElementById("exercicio2");
-        divElement.innerHTML = `<p>Nome: ${user.name}</p><p>Idade: ${user.age}</p><p>E-mail: ${user.email}</p>`;
-    }
     exibirTexto(user);
 }
 main();
@@ -30,12 +30,7 @@ class Produto {
         this.quantidadeEstoque = quantidadeEstoque;
     }
     exibirInformacoes() {
-        return ("Nome: " +
-            this.nome +
-            ", Preço: " +
-            this.preco +
-            ", Quantidade em estoque: " +
-            this.quantidadeEstoque);
+        return `Nome: ${this.nome}, Preço: ${this.preco}, Quantidade em estoque: ${this.quantidadeEstoque}`;
     }
 }
 function adicionarProduto(event) {
@@ -58,3 +53,15 @@ function adicionarProduto(event) {
 document
     .getElementById("exercicio3")
     .addEventListener("submit", adicionarProduto);
+function converterParaMaiusculas(texto) {
+    return texto.toUpperCase();
+}
+function aplicarConversao(event) {
+    event.preventDefault();
+    const texto = document.getElementById("textoInput").value;
+    const textoConvertido = converterParaMaiusculas(texto);
+    document.getElementById("resultadoMaiusculas").innerText = textoConvertido;
+}
+document
+    .getElementById("exercicio4")
+    .addEventListener("submit", aplicarConversao);
