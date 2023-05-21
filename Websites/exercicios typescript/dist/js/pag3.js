@@ -40,10 +40,10 @@ class Produto {
 }
 function adicionarProduto(event) {
     event.preventDefault();
-    const nome = document.getElementById("nomeInput")
-        .value;
+    const nome = document.getElementById("nomeInput").value;
     const descricao = document.getElementById("descricaoInput").value;
-    const precoText = document.getElementById("precoInput").value;
+    const precoText = document.getElementById("precoInput")
+        .value;
     const quantidade = Number(document.getElementById("quantidadeInput").value);
     const preco = parseFloat(precoText.replace(",", "."));
     if (isNaN(preco)) {
@@ -60,3 +60,44 @@ function adicionarProduto(event) {
 document
     .getElementById("exercicio12")
     .addEventListener("submit", adicionarProduto);
+class Animal {
+    constructor(nome, idade, tipo, dono) {
+        this.nome = nome;
+        this.idade = idade;
+        this.tipo = tipo;
+        this.dono = dono;
+    }
+    exibirInformacoes() {
+        return `<li>Nome: ${this.nome}, Idade: ${this.idade}, Tipo: ${this.tipo}, Dono: ${this.dono}</li>`;
+    }
+}
+const animais = [];
+function cadastrarAnimal(event) {
+    event.preventDefault();
+    const nomeInput = document.getElementById("nomeInput");
+    const idadeInput = document.getElementById("idadeInput");
+    const tipoInput = document.getElementById("tipoInput");
+    const donoInput = document.getElementById("donoInput");
+    const nome = nomeInput.value;
+    const idade = Number(idadeInput.value);
+    const tipo = tipoInput.value;
+    const dono = donoInput.value;
+    const animal = new Animal(nome, idade, tipo, dono);
+    animais.push(animal);
+    nomeInput.value = "";
+    idadeInput.value = "";
+    tipoInput.value = "";
+    donoInput.value = "";
+    exibirListaAnimais();
+}
+function exibirListaAnimais() {
+    const listaAnimais = document.getElementById("listaAnimais");
+    listaAnimais.innerHTML = "";
+    animais.forEach((animal) => {
+        const animalItem = document.createElement("li");
+        animalItem.innerHTML = animal.exibirInformacoes();
+        listaAnimais.appendChild(animalItem);
+    });
+}
+const animalForm = document.getElementById("animalForm");
+animalForm.addEventListener("submit", cadastrarAnimal);
