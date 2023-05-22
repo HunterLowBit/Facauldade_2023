@@ -1,4 +1,10 @@
 "use strict";
+/**
+ * Função para encontrar o maior elemento em um array de números.
+ * @param {number[]} numeros - O array de números.
+ * @returns {number} - O maior elemento do array.
+ * @throws {Error} - Se o array estiver vazio.
+ */
 function encontrarMaiorElemento(numeros) {
     if (numeros.length === 0) {
         throw new Error("O array está vazio.");
@@ -27,17 +33,36 @@ document
     }
     numerosInput.value = "";
 });
+/**
+ * Classe Produto representa um produto com nome, descrição, preço e quantidade em estoque.
+ */
 class Produto {
+    /**
+     * Cria uma instância da classe Produto.
+     * @param {string} nome - O nome do produto.
+     * @param {string} descricao - A descrição do produto.
+     * @param {number} preco - O preço do produto.
+     * @param {number} quantidadeEstoque - A quantidade em estoque do produto.
+     */
     constructor(nome, descricao, preco, quantidadeEstoque) {
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
         this.quantidadeEstoque = quantidadeEstoque;
     }
+    /**
+     * Retorna uma string com as informações do produto.
+     * @returns {string} - As informações do produto.
+     */
     exibirInformacoes() {
         return `Nome: ${this.nome}, Descrição: ${this.descricao}, Preço: ${this.preco}, Quantidade em estoque: ${this.quantidadeEstoque}`;
     }
 }
+/**
+ * Função para adicionar um produto à lista de produtos na página HTML.
+ * @param {Event} event - O evento de submit.
+ * @returns {void}
+ */
 function adicionarProduto(event) {
     event.preventDefault();
     const nome = document.getElementById("nomeInput").value;
@@ -61,18 +86,37 @@ function adicionarProduto(event) {
 document
     .getElementById("exercicio12")
     .addEventListener("submit", adicionarProduto);
+/**
+ * Classe Animal representa um animal com nome, idade, tipo e dono.
+ */
 class Animal {
+    /**
+     * Cria uma instância da classe Animal.
+     * @param {string} nome - O nome do animal.
+     * @param {number} idade - A idade do animal.
+     * @param {string} tipo - O tipo do animal.
+     * @param {string} dono - O dono do animal.
+     */
     constructor(nome, idade, tipo, dono) {
         this.nome = nome;
         this.idade = idade;
         this.tipo = tipo;
         this.dono = dono;
     }
+    /**
+     * Retorna uma string com as informações do animal.
+     * @returns {string} - As informações do animal.
+     */
     exibirInformacoes() {
         return `<li>Nome: ${this.nome}, Idade: ${this.idade}, Tipo: ${this.tipo}, Dono: ${this.dono}</li>`;
     }
 }
 const animais = [];
+/**
+ * Função para cadastrar um animal na lista de animais.
+ * @param {Event} event - O evento de submit.
+ * @returns {void}
+ */
 function cadastrarAnimal(event) {
     event.preventDefault();
     const nomeInput = document.getElementById("nomeInput");
@@ -92,6 +136,10 @@ function cadastrarAnimal(event) {
     exibirListaAnimais();
     console.log("Animal cadastrado:", animal);
 }
+/**
+ * Função para exibir a lista de animais na página HTML.
+ * @returns {void}
+ */
 function exibirListaAnimais() {
     const listaAnimais = document.getElementById("listaAnimais");
     listaAnimais.innerHTML = "";
@@ -104,6 +152,11 @@ function exibirListaAnimais() {
 }
 const animalForm = document.getElementById("animalForm");
 animalForm.addEventListener("submit", cadastrarAnimal);
+/**
+ * Função para inverter uma string.
+ * @param {Event} event - O evento de submit.
+ * @returns {void}
+ */
 function inverterString(event) {
     event.preventDefault();
     const stringInput = document.getElementById("stringInput");
@@ -113,22 +166,45 @@ function inverterString(event) {
     resultElement.textContent = reversedString;
     console.log("String invertida:", reversedString);
 }
+/**
+ * Função para inverter uma string.
+ * @param {string} str - A string a ser invertida.
+ * @returns {string} - A string invertida.
+ */
 function reverseString(str) {
     return str.split("").reverse().join("");
 }
 const reverseForm = document.getElementById("reverseForm");
 reverseForm.addEventListener("submit", inverterString);
+/**
+ * Classe Livro representa um livro com título, autor e número de páginas.
+ */
 class Livro {
+    /**
+     * Cria uma instância da classe Livro.
+     * @param {string} titulo - O título do livro.
+     * @param {string} autor - O autor do livro.
+     * @param {number} paginas - O número de páginas do livro.
+     */
     constructor(titulo, autor, paginas) {
         this.titulo = titulo;
         this.autor = autor;
         this.paginas = paginas;
     }
+    /**
+     * Retorna uma string com as informações do livro.
+     * @returns {string} - As informações do livro.
+     */
     exibirInformacoes() {
         return `<li>Título: ${this.titulo}, Autor: ${this.autor}, Páginas: ${this.paginas}</li>`;
     }
 }
 const livros = [];
+/**
+ * Função para cadastrar um livro na lista de livros.
+ * @param {Event} event - O evento de submit.
+ * @returns {void}
+ */
 function cadastrarLivro(event) {
     event.preventDefault();
     const tituloInput = document.getElementById("tituloInput");
@@ -145,6 +221,10 @@ function cadastrarLivro(event) {
     exibirListaLivros();
     console.log("Livro cadastrado:", livro);
 }
+/**
+ * Função para exibir a lista de livros na página HTML.
+ * @returns {void}
+ */
 function exibirListaLivros() {
     const listaLivros = document.getElementById("listaLivros");
     listaLivros.innerHTML = "";

@@ -7,6 +7,7 @@ body {
   padding: 0.5%;
 }
 
+/* Estilos para a navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -23,10 +24,34 @@ body {
   border-radius: 50%;
 }
 
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .navbar > div {
+    margin-bottom: 10px;
+  }
+
+  .navbar a {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
 .exercicio {
   background-color: rgb(189, 189, 189);
   border: 1px;
   border-color: black;
   border-style: dashed;
   padding: 1%;
+}
+
+/* Estilos responsivos para a classe "exercicio" */
+@media screen and (max-width: 768px) {
+  .exercicio {
+    padding: 5%;
+  }
 }

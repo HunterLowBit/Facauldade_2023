@@ -1,4 +1,148 @@
 "use strict";
+/*
+ * Encontra o menor elemento em um array de números.
+ * @param {number[]} numeros - O array de números.
+ * @returns {number} O menor elemento encontrado.
+ * @throws {Error} Se o array estiver vazio.
+
+function encontrarMenorElemento(numeros) {
+   Implementação da função...
+}
+
+
+ * Manipulador de evento para encontrar o menor elemento.
+ * @param {Event} event - O objeto de evento.
+
+function encontrarMenorElementoHandler(event) {
+   Implementação do manipulador de evento...
+}
+
+
+ * Interface para representar um funcionário.
+ * @typedef {Object} Funcionario
+ * @property {string} nome - O nome do funcionário.
+ * @property {string} cargo - O cargo do funcionário.
+ * @property {number} salario - O salário do funcionário.
+
+
+
+ * Array de funcionários.
+ * @type {Funcionario[]}
+
+* const funcionarios = [];
+
+
+ * Adiciona um novo funcionário.
+ * @param {Event} event - O objeto de evento.
+
+function adicionarFuncionario(event) {
+   Implementação da função...
+}
+
+
+ * Atualiza a lista de funcionários exibida na interface.
+
+function atualizarListaFuncionarios() {
+   Implementação da função...
+}
+
+
+ * Classe para representar uma casa.
+
+class Casa {
+
+   * Cria uma instância de Casa.
+   * @param {string} endereco - O endereço da casa.
+   * @param {number} numeroQuartos - O número de quartos da casa.
+   * @param {number} tamanhoTerreno - O tamanho do terreno em metros quadrados.
+
+  constructor(endereco, numeroQuartos, tamanhoTerreno) {
+    Inicialização das propriedades da classe...
+  }
+
+
+   * Obtém as informações da casa formatadas como uma string.
+   * @returns {string} As informações da casa.
+
+  obterInformacoes() {
+    Implementação do método...
+  }
+}
+
+
+ * Array de casas cadastradas.
+ * @type {Casa[]}
+
+* const casasCadastradas = [];
+
+
+ * Cadastra uma nova casa.
+ * @param {Event} event - O objeto de evento.
+
+function cadastrarCasa(event) {
+   Implementação da função...
+}
+
+
+ * Exibe as casas cadastradas na interface.
+
+function exibirCasasCadastradas() {
+   Implementação da função...
+}
+
+
+ * Remove os espaços em uma string.
+ * @param {string} str - A string a ser processada.
+ * @returns {string} A string sem espaços.
+
+function removerEspacos(str) {
+   Implementação da função...
+}
+
+ * Manipulador de evento para remover espaços.
+ * @param {Event} event - O objeto de evento.
+
+function removerEspacosHandler(event) {
+  Implementação do manipulador de evento...
+}
+
+
+ * Interface para representar um celular.
+ * @typedef {Object} Celular
+ * @property {string} marca - A marca do celular.
+ * @property {string} modelo - O modelo do celular.
+ * @property {string} sistemaOperacional - O sistema operacional do celular.
+ * @property {number} capacidadeArmazenamento - A capacidade de armazenamento em GB do celular.
+
+
+
+ * Array de celulares.
+ * @type {Celular[]}
+ 
+const celulares = [];
+
+
+ * Adiciona um novo celular.
+ * @param {Event} event - O objeto de evento.
+
+function adicionarCelular(event) {
+  Implementação da função...
+}
+
+
+ * Atualiza a lista de celulares exibida na interface.
+
+function atualizarListaCelulares() {
+   Implementação da função...
+}
+
+
+ * Limpa os campos do formulário de cadastro de celular.
+
+function limparFormulario() {
+   Implementação da função...
+}
+*/
 function encontrarMenorElemento(numeros) {
     if (numeros.length === 0) {
         throw new Error("O array está vazio.");

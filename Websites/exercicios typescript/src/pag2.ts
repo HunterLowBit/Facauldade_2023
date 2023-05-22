@@ -1,34 +1,51 @@
+/**
+ * Classe Carro representa um carro com modelo, ano, cor e velocidade atual.
+ */
 class Carro {
-  modelo: string;
-  ano: number;
-  cor: string;
-  velocidadeAtual: number;
-
+  /**
+   * Cria uma instância da classe Carro.
+   * @param {string} modelo - O modelo do carro.
+   * @param {number} ano - O ano do carro.
+   * @param {string} cor - A cor do carro.
+   * @param {number} velocidadeAtual - A velocidade atual do carro em KM/H.
+   */
   constructor(
-    modelo: string,
-    ano: number,
-    cor: string,
-    velocidadeAtual: number
-  ) {
-    this.modelo = modelo;
-    this.ano = ano;
-    this.cor = cor;
-    this.velocidadeAtual = velocidadeAtual;
-  }
+    public modelo: string,
+    public ano: number,
+    public cor: string,
+    public velocidadeAtual: number
+  ) {}
 
+  /**
+   * Acelera o carro aumentando a velocidade atual.
+   * @param {number} velocidade - A velocidade a ser adicionada à velocidade atual.
+   * @returns {void}
+   */
   acelerar(velocidade: number): void {
     this.velocidadeAtual += velocidade;
   }
 
+  /**
+   * Freia o carro, definindo a velocidade atual como 0.
+   * @returns {void}
+   */
   frear(): void {
     this.velocidadeAtual = 0;
   }
 
+  /**
+   * Retorna uma string com as informações do carro.
+   * @returns {string} - As informações do carro.
+   */
   exibirInformacoes(): string {
     return `Modelo: ${this.modelo}, Ano: ${this.ano}, Cor: ${this.cor}, Velocidade Atual: ${this.velocidadeAtual} KM/H`;
   }
 }
 
+/**
+ * Função para exibir as informações do carro na página HTML.
+ * @returns {void}
+ */
 function exibirCarro(): void {
   const modeloInput = document.getElementById(
     "modeloInput"
@@ -58,11 +75,21 @@ document
     exibirCarro();
   });
 
+/**
+ * Função para calcular a soma de um array de números.
+ * @param {number[]} numeros - O array de números.
+ * @returns {number} - A soma dos números.
+ */
 function calcularSoma(numeros: number[]): number {
   return numeros.reduce((acc, num) => acc + num, 0);
 }
 
-function exibirResultado(event: Event) {
+/**
+ * Função para exibir o resultado da soma na página HTML.
+ * @param {Event} event - O evento de submit.
+ * @returns {void}
+ */
+function exibirResultado(event: Event): void {
   event.preventDefault();
 
   const numerosInput = document.getElementById(
@@ -83,25 +110,35 @@ document
   .getElementById("exercicio6")
   .addEventListener("submit", exibirResultado);
 
+/**
+ * Classe Animal representa um animal com nome, idade e tipo.
+ */
 class Animal {
-  nome;
-  idade;
-  tipo;
+  /**
+   * Cria uma instância da classe Animal.
+   * @param {string} nome - O nome do animal.
+   * @param {number} idade - A idade do animal.
+   * @param {string} tipo - O tipo do animal.
+   */
+  constructor(public nome: string, public idade: number, public tipo: string) {}
 
-  constructor(nome, idade, tipo) {
-    this.nome = nome;
-    this.idade = idade;
-    this.tipo = tipo;
-  }
-
-  exibirInformacoes() {
+  /**
+   * Retorna uma string com as informações do animal formatadas como um item de lista HTML.
+   * @returns {string} - As informações do animal formatadas como um item de lista HTML.
+   */
+  exibirInformacoes(): string {
     return `<li>Nome: ${this.nome}, Idade: ${this.idade}, Tipo: ${this.tipo}</li>`;
   }
 }
 
-const animais = [];
+const animais: Animal[] = [];
 
-function cadastrarAnimal(event) {
+/**
+ * Função para cadastrar um animal na lista de animais.
+ * @param {Event} event - O evento de submit.
+ * @returns {void}
+ */
+function cadastrarAnimal(event: Event): void {
   event.preventDefault();
 
   const nomeInput = document.getElementById("nomeInput");
@@ -124,7 +161,11 @@ function cadastrarAnimal(event) {
   console.log("Animal cadastrado:", animal);
 }
 
-function exibirListaAnimais() {
+/**
+ * Função para exibir a lista de animais na página HTML.
+ * @returns {void}
+ */
+function exibirListaAnimais(): void {
   const listaAnimais = document.getElementById("listaAnimais");
   listaAnimais.innerHTML = "";
 
@@ -140,23 +181,36 @@ function exibirListaAnimais() {
 const animalForm = document.getElementById("animalForm");
 animalForm.addEventListener("submit", cadastrarAnimal);
 
+/**
+ * Classe Pessoa representa uma pessoa com nome, idade e endereço.
+ */
 class Pessoa {
-  nome;
-  idade;
-  endereco;
+  /**
+   * Cria uma instância da classe Pessoa.
+   * @param {string} nome - O nome da pessoa.
+   * @param {number} idade - A idade da pessoa.
+   * @param {string} endereco - O endereço da pessoa.
+   */
+  constructor(
+    public nome: string,
+    public idade: number,
+    public endereco: string
+  ) {}
 
-  constructor(nome, idade, endereco) {
-    this.nome = nome;
-    this.idade = idade;
-    this.endereco = endereco;
-  }
-
-  exibirInformacoes() {
+  /**
+   * Retorna uma string com as informações da pessoa.
+   * @returns {string} - As informações da pessoa.
+   */
+  exibirInformacoes(): string {
     return `Nome: ${this.nome}, Idade: ${this.idade}, Endereço: ${this.endereco}`;
   }
 }
 
-function exibirListaPessoas() {
+/**
+ * Função para exibir a lista de pessoas na página HTML.
+ * @returns {void}
+ */
+function exibirListaPessoas(): void {
   const listaPessoas = document.getElementById("pessoasList");
   listaPessoas.innerHTML = "";
 
@@ -169,9 +223,14 @@ function exibirListaPessoas() {
   console.log("Lista de pessoas:", pessoas);
 }
 
-const pessoas = [];
+const pessoas: Pessoa[] = [];
 
-function cadastrarPessoa(event) {
+/**
+ * Função para cadastrar uma pessoa na lista de pessoas.
+ * @param {Event} event - O evento de submit.
+ * @returns {void}
+ */
+function cadastrarPessoa(event: Event): void {
   event.preventDefault();
 
   const nomeInput = document.getElementById("nomeInputPessoa");
@@ -197,11 +256,21 @@ function cadastrarPessoa(event) {
 const cadastroForm = document.getElementById("cadastroForm");
 cadastroForm.addEventListener("submit", cadastrarPessoa);
 
+/**
+ * Função para converter um texto para letras minúsculas.
+ * @param {string} texto - O texto a ser convertido.
+ * @returns {string} - O texto convertido para letras minúsculas.
+ */
 function converterParaMinusculas(texto: string): string {
   return texto.toLowerCase();
 }
 
-function aplicarConversao(event) {
+/**
+ * Função para aplicar a conversão para letras minúsculas e exibir o resultado na página HTML.
+ * @param {Event} event - O evento de submit.
+ * @returns {void}
+ */
+function aplicarConversao(event: Event): void {
   event.preventDefault();
 
   const texto = document.getElementById("textoInput").value;
@@ -216,23 +285,35 @@ document
   .getElementById("exercicio9")
   .addEventListener("submit", aplicarConversao);
 
+/**
+ * Classe ContaBancaria representa uma conta bancária com número da conta, saldo e transações.
+ */
 class ContaBancaria {
-  numeroConta;
-  saldo;
-  transacoes;
-
-  constructor(numeroConta, saldo) {
-    this.numeroConta = numeroConta;
-    this.saldo = saldo;
+  /**
+   * Cria uma instância da classe ContaBancaria.
+   * @param {string} numeroConta - O número da conta.
+   * @param {number} saldo - O saldo da conta.
+   */
+  constructor(public numeroConta: string, public saldo: number) {
     this.transacoes = [];
   }
 
-  depositar(valor) {
+  /**
+   * Realiza um depósito na conta bancária e registra a transação.
+   * @param {number} valor - O valor a ser depositado.
+   * @returns {void}
+   */
+  depositar(valor: number): void {
     this.saldo += valor;
     this.transacoes.push(`Depósito de ${valor}`);
   }
 
-  sacar(valor) {
+  /**
+   * Realiza um saque na conta bancária, se houver saldo suficiente, e registra a transação.
+   * @param {number} valor - O valor a ser sacado.
+   * @returns {void}
+   */
+  sacar(valor: number): void {
     if (valor <= this.saldo) {
       this.saldo -= valor;
       this.transacoes.push(`Saque de ${valor}`);
@@ -241,45 +322,68 @@ class ContaBancaria {
     }
   }
 
-  exibirExtrato() {
-    const extratoList = document.getElementById("extratoList");
-    extratoList.innerHTML = `<li>Conta: ${this.numeroConta}</li>`;
-    extratoList.innerHTML += `<li>Saldo: R$ ${this.saldo.toFixed(2)}</li>`;
-    extratoList.innerHTML += `<li>Transações:</li>`;
+  /**
+   * Retorna uma string com as informações da conta bancária e suas transações.
+   * @returns {string} - As informações da conta bancária e suas transações.
+   */
+  exibirExtrato(): string {
+    let extrato = `Conta: ${this.numeroConta}, Saldo: ${this.saldo}\n`;
+    extrato += "Transações:\n";
     this.transacoes.forEach((transacao) => {
-      const item = document.createElement("li");
-      item.innerText = transacao;
-      extratoList.appendChild(item);
+      extrato += `${transacao}\n`;
     });
+    return extrato;
   }
 }
 
-const contaForm = document.getElementById("contaForm");
-contaForm.addEventListener("submit", function (event) {
+/**
+ * Função para realizar uma operação de depósito ou saque na conta bancária e exibir o extrato na página HTML.
+ * @param {Event} event - O evento de submit.
+ * @returns {void}
+ */
+function realizarOperacao(event: Event): void {
   event.preventDefault();
-  const numeroConta = document.getElementById("numeroContaInput").value;
-  const saldo = parseFloat(document.getElementById("saldoInput").value);
-  const conta = new ContaBancaria(numeroConta, saldo);
-  conta.exibirExtrato();
 
-  const operacoesForm = document.getElementById("operacoesForm");
-  const valorInput = document.getElementById("valorInput");
-  const depositoButton = document.getElementById("depositoButton");
-  const saqueButton = document.getElementById("saqueButton");
+  const numeroConta = document.getElementById(
+    "numeroContaInput"
+  ) as HTMLInputElement;
+  const valorInput = document.getElementById("valorInput") as HTMLInputElement;
+  const operacaoSelect = document.getElementById(
+    "operacaoSelect"
+  ) as HTMLSelectElement;
 
-  depositoButton.addEventListener("click", function () {
-    const valor = parseFloat(valorInput.value);
-    conta.depositar(valor);
-    conta.exibirExtrato();
-    valorInput.value = "";
-  });
+  const conta = encontrarConta(numeroConta.value);
 
-  saqueButton.addEventListener("click", function () {
-    const valor = parseFloat(valorInput.value);
-    conta.sacar(valor);
-    conta.exibirExtrato();
-    valorInput.value = "";
-  });
-});
+  if (conta) {
+    const valor = Number(valorInput.value);
+    const operacao = operacaoSelect.value;
 
-console.log("Código carregado com sucesso!");
+    if (operacao === "deposito") {
+      conta.depositar(valor);
+    } else if (operacao === "saque") {
+      conta.sacar(valor);
+    }
+
+    const extratoElement = document.getElementById("extrato");
+    extratoElement.innerText = conta.exibirExtrato();
+
+    console.log("Operação realizada:", operacao, "Valor:", valor);
+  } else {
+    console.log("Conta não encontrada");
+  }
+}
+
+/**
+ * Função para encontrar uma conta bancária na lista de contas.
+ * @param {string} numeroConta - O número da conta a ser encontrada.
+ * @returns {ContaBancaria | undefined} - A conta bancária encontrada ou undefined se não for encontrada.
+ */
+function encontrarConta(numeroConta: string): ContaBancaria | undefined {
+  return contas.find((conta) => conta.numeroConta === numeroConta);
+}
+
+const contas: ContaBancaria[] = [];
+
+document
+  .getElementById("contaForm")
+  .addEventListener("submit", realizarOperacao);
