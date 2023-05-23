@@ -3,20 +3,30 @@ function converterParaMaiusculas(texto: string): string {
   return texto.toUpperCase();
 }
 
-/**
- * Função para aplicar a conversão para maiúsculas em um texto e exibir na página HTML.
- * @param {Event} event - O evento de submit.
- * @returns {void}
- */
+function converterPrimeiraLetraCadaPalavra(texto: string): string {
+  console.log("Função converterPrimeiraLetraCadaPalavra:", texto);
+  return texto
+    .toLowerCase()
+    .replace(/(?:^|\s)\w/g, (match) => match.toUpperCase());
+}
+
 function aplicarConversao(event: Event): void {
   event.preventDefault();
-  const texto = document.getElementById("textoInput").value;
-  console.log("Texto fornecido:", texto);
-  const textoConvertido = converterParaMaiusculas(texto);
-  console.log("Texto convertido:", textoConvertido);
-  document.getElementById("resultadoMaiusculas").innerText = textoConvertido;
+  const texto = (<HTMLTextAreaElement>document.getElementById("textoInput"))
+    .value;
+
+  const textoConvertidoMaiusculas = converterParaMaiusculas(texto);
+  document.getElementById("resultadoMaiusculas").innerText =
+    textoConvertidoMaiusculas;
+
+  const textoConvertidoPrimeiraLetra = converterPrimeiraLetraCadaPalavra(texto);
+  document.getElementById("resultadoPrimeiraLetra").innerText =
+    textoConvertidoPrimeiraLetra;
 }
 
 document
   .getElementById("exercicio4")
+  .addEventListener("submit", aplicarConversao);
+document
+  .getElementById("exercicio5")
   .addEventListener("submit", aplicarConversao);

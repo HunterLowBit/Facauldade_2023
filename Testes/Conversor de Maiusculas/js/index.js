@@ -2,19 +2,26 @@ function converterParaMaiusculas(texto) {
     console.log("Função converterParaMaiusculas:", texto);
     return texto.toUpperCase();
 }
-/**
- * Função para aplicar a conversão para maiúsculas em um texto e exibir na página HTML.
- * @param {Event} event - O evento de submit.
- * @returns {void}
- */
+function converterPrimeiraLetraCadaPalavra(texto) {
+    console.log("Função converterPrimeiraLetraCadaPalavra:", texto);
+    return texto
+        .toLowerCase()
+        .replace(/(?:^|\s)\w/g, function (match) { return match.toUpperCase(); });
+}
 function aplicarConversao(event) {
     event.preventDefault();
-    var texto = document.getElementById("textoInput").value;
-    console.log("Texto fornecido:", texto);
-    var textoConvertido = converterParaMaiusculas(texto);
-    console.log("Texto convertido:", textoConvertido);
-    document.getElementById("resultadoMaiusculas").innerText = textoConvertido;
+    var texto = document.getElementById("textoInput")
+        .value;
+    var textoConvertidoMaiusculas = converterParaMaiusculas(texto);
+    document.getElementById("resultadoMaiusculas").innerText =
+        textoConvertidoMaiusculas;
+    var textoConvertidoPrimeiraLetra = converterPrimeiraLetraCadaPalavra(texto);
+    document.getElementById("resultadoPrimeiraLetra").innerText =
+        textoConvertidoPrimeiraLetra;
 }
 document
     .getElementById("exercicio4")
+    .addEventListener("submit", aplicarConversao);
+document
+    .getElementById("exercicio5")
     .addEventListener("submit", aplicarConversao);
