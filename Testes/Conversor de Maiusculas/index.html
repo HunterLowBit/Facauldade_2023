@@ -28,20 +28,33 @@
     <div class="exercicio">
       <h2>Tudo para Maiúsculo</h2>
       <form id="exercicio4">
-        <label for="textoInput">Digite um texto:<br></label>
-        <textarea id="textoInput"></textarea><br>
+        <label for="textoInput">Digite um texto:<br /></label>
+        <textarea id="textoInput"></textarea><br />
         <button type="submit">Converter para Maiúsculas</button>
       </form>
 
       <pre id="resultadoMaiusculas"></pre>
+      <button
+        class="copy-button"
+        onclick="copiarResultado('resultadoMaiusculas')"
+      >
+        Copiar
+      </button>
     </div>
 
     <div class="exercicio">
       <h2>Primeira Letra Maiúscula</h2>
-      <form id="exercicio5">
-        
+      
 
       <pre id="resultadoPrimeiraLetra"></pre>
+      <button
+        class="copy-button"
+        onclick="copiarResultado('resultadoPrimeiraLetra')"
+      >
+        Copiar
+      </button>
     </div>
+
+    <script src="js/index.js"></script>
   </body>
 </html>

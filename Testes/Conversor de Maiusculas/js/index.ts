@@ -1,19 +1,18 @@
-function converterParaMaiusculas(texto: string): string {
+function converterParaMaiusculas(texto) {
   console.log("Função converterParaMaiusculas:", texto);
   return texto.toUpperCase();
 }
 
-function converterPrimeiraLetraCadaPalavra(texto: string): string {
+function converterPrimeiraLetraCadaPalavra(texto) {
   console.log("Função converterPrimeiraLetraCadaPalavra:", texto);
   return texto
     .toLowerCase()
     .replace(/(?:^|\s)\w/g, (match) => match.toUpperCase());
 }
 
-function aplicarConversao(event: Event): void {
+function aplicarConversao(event) {
   event.preventDefault();
-  const texto = (<HTMLTextAreaElement>document.getElementById("textoInput"))
-    .value;
+  const texto = document.getElementById("textoInput").value;
 
   const textoConvertidoMaiusculas = converterParaMaiusculas(texto);
   document.getElementById("resultadoMaiusculas").innerText =
@@ -30,3 +29,8 @@ document
 document
   .getElementById("exercicio5")
   .addEventListener("submit", aplicarConversao);
+
+function copiarResultado(elementId) {
+  const resultado = document.getElementById(elementId).innerText;
+  navigator.clipboard.writeText(resultado);
+}

@@ -10,8 +10,7 @@ function converterPrimeiraLetraCadaPalavra(texto) {
 }
 function aplicarConversao(event) {
     event.preventDefault();
-    var texto = document.getElementById("textoInput")
-        .value;
+    var texto = document.getElementById("textoInput").value;
     var textoConvertidoMaiusculas = converterParaMaiusculas(texto);
     document.getElementById("resultadoMaiusculas").innerText =
         textoConvertidoMaiusculas;
@@ -25,3 +24,7 @@ document
 document
     .getElementById("exercicio5")
     .addEventListener("submit", aplicarConversao);
+function copiarResultado(elementId) {
+    var resultado = document.getElementById(elementId).innerText;
+    navigator.clipboard.writeText(resultado);
+}

@@ -65,3 +65,13 @@ body {
   text-decoration: underline;
   cursor: pointer;
 }
+
+.copy-button {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgb(255, 194, 103);
+  border: none;
+  color: rgb(66, 97, 101);
+  cursor: pointer;
+  margin-top: 10px;
+}
