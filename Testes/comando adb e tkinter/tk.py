@@ -1,6 +1,7 @@
 import subprocess
 import tkinter as tk
 from tkinter import filedialog
+from tkinter import ttk
 
 def executar_comando_adb(comando):
     # Executa o comando adb usando subprocess
@@ -40,19 +41,41 @@ def abrir_pasta_destino():
 def executar_pull():
     origem = entry_origem.get()
     destino = entry_destino.get()
-    resultado_pull = adb_pull(origem, destino)
+    
+    # Executa o comando adb pull
+    comando = ["adb", "pull", origem, destino]
+    
+    # Obtém o tamanho total do arquivo
+    resultado_tamanho = executar_comando_adb(["adb", "shell", "du", "-sb", origem])
+    tamanho_total = int(resultado_tamanho.split()[0])
+    
+    # Configura a barra de progresso
+    progresso["maximum"] = tamanho_total
+    
+    resultado_pull = executar_comando_adb(comando)
     print(resultado_pull)
 
 def executar_push():
     origem = entry_origem.get()
     destino = entry_destino.get()
-    resultado_push = adb_push(origem, destino)
+    
+    # Executa o comando adb push
+    comando = ["adb", "push", origem, destino]
+    
+    # Obtém o tamanho total do arquivo
+    resultado_tamanho = executar_comando_adb(["du", "-sb", origem])
+    tamanho_total = int(resultado_tamanho.split()[0])
+    
+    # Configura a barra de progresso
+    progresso["maximum"] = tamanho_total
+    
+    resultado_push = executar_comando_adb(comando)
     print(resultado_push)
 
 # Criação da janela Tkinter
 window = tk.Tk()
 window.title("Aplicação ADB")
-window.geometry("400x200")
+window.geometry("400x250")
 
 # Rótulos e entradas de texto
 label_origem = tk.Label(window, text="Pasta de origem:")
@@ -77,6 +100,10 @@ btn_pull.pack()
 
 btn_push = tk.Button(window, text="Executar adb push", command=executar_push)
 btn_push.pack()
+
+# Barra de progresso
+progresso = ttk.Progressbar(window, orient="horizontal", length=300, mode="determinate")
+progresso.pack()
 
 # Inicia o loop principal da janela Tkinter
 window.mainloop()
