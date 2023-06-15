@@ -1,0 +1,20 @@
+qui. 15
+ | 27° | 21° | Rain12% | E 13 km/h
+sex. 16
+ | 26° | 21° | Rain47% | SO 13 km/h
+sáb. 17
+ | 22° | 19° | Rain39% | OSO 19 km/h
+dom. 18
+ | 22° | 18° | Rain24% | OSO 23 km/h
+seg. 19
+ | 22° | 17° | Rain31% | SSO 14 km/h
+ter. 20
+ | 24° | 18° | Rain6% | ENE 17 km/h
+qua. 21
+ | 25° | 18° | Rain5% | E 15 km/h
+qui. 22
+ | 25° | 19° | Rain10% | E 16 km/h
+sex. 23
+ | 25° | 19° | Rain39% | O 16 km/h
+sáb. 24
+ | 23° | 19° | Rain31% | SSE 16 km/h
