@@ -1,5 +1,5 @@
-cache = C:\Users\ALUNO\Desktop\Facauldade_2023\node\cache
-globalconfig = C:\Users\ALUNO\Desktop\Facauldade_2023\node\app\etc\npmrc
-globalignorefile = C:\Users\ALUNO\Desktop\Facauldade_2023\node\app\etc\.npmignore
-init-module = C:\Users\ALUNO\Desktop\Facauldade_2023\node\app\etc\.npm-init.js
-userconfig = C:\Users\ALUNO\Desktop\Facauldade_2023\node\app\etc\npmrc
+cache = C:\Users\Aluno\Desktop\Facauldade_2023\NODE\cache
+globalconfig = C:\Users\Aluno\Desktop\Facauldade_2023\NODE\app\etc\npmrc
+globalignorefile = C:\Users\Aluno\Desktop\Facauldade_2023\NODE\app\etc\.npmignore
+init-module = C:\Users\Aluno\Desktop\Facauldade_2023\NODE\app\etc\.npm-init.js
+userconfig = C:\Users\Aluno\Desktop\Facauldade_2023\NODE\app\etc\npmrc
